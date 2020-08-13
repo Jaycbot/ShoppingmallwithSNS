@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
+@import '~react-image-gallery/styles/css/image-gallery.css';
+
+body {
+	background-color: #f7f8f9;
+	font-family: 'Nanum Gothic Coding', monospace;
+}

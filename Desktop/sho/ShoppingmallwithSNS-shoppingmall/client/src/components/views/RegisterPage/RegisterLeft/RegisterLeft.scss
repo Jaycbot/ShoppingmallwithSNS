@@ -1,0 +1,80 @@
+.register_main_left {
+    flex-basis: 50%;
+    padding-right: 20px;
+    
+    border-right: 1px dashed rgb(201, 205, 210);
+  
+    .input_wrapper {
+      position: relative;
+      display: block;
+  
+      .invalid-feedback,
+      .short_id {
+        color: red;
+        font-size: 12px;
+        position: absolute;
+        bottom: 10px;
+        right: 5px;
+      }
+      .short_pwd {
+        color: red;
+        font-size: 12px;
+        position: absolute;
+        bottom: 50px;
+        right: 5px;
+      }
+  
+      .info_input1,
+      .info_input {
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 14px;
+        line-height: 1.3;
+        padding: 10px;
+  
+        outline: none;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(201, 205, 210);
+        border-image: initial;
+        border-radius: 6px;
+  
+        &:focus {
+          outline: none;
+          border-color: rgb(74, 218, 175);
+        }
+  
+        &::placeholder {
+          color: #e0dfdf;
+        }
+      }
+      .info_input1 {
+        margin: 20px 0 0 0;
+      }
+    }
+  
+    div:last-child {
+      text-align: right;
+  
+      .register_btn {
+        width: 155px;
+        cursor: pointer;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        user-select: none;
+        line-height: 1.3;
+        padding: 14px 0px;
+        margin: 20px 0 0 0;
+        background: rgb(74, 218, 175);
+        border-radius: 6px;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        outline: none;
+        transition: background-color 0.12s ease-in-out 0s;
+      }
+    }
+  }
+  

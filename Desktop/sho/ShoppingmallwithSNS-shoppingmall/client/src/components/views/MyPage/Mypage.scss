@@ -1,0 +1,59 @@
+.container {
+
+	.user_posts {
+		width: 80%;
+	margin: 2rem auto;
+	margin-top: 100px;
+	}
+
+	.input_search{
+		display: flex;
+		justify-content: flex-end;
+		margin : 1rem auto
+	}
+
+
+	.list_container {
+		width: 75vw;
+		height: 24vw;
+		background-image: url('https://cdn.pixabay.com/photo/2020/07/08/04/12/work-5382501__340.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		opacity: 0.7;
+		margin: 3rem auto;
+		z-index: 1;
+		.profile_image {
+			display: inline-block;
+
+			img {
+				z-index: 2;
+				width: 150px;
+				height: 150px;
+				border-radius: 50%;
+				opacity: 0.8;
+				margin-top: 1rem;
+				margin-left: 1rem;
+			}
+		}
+		.userInfo {
+			display: inline-block;
+			margin-left: 1rem;
+		}
+		.update_info {
+			float: right;
+			button {
+				box-sizing: border-box;
+				color: #ffffff;
+				min-width: 70px;
+				background-color: rgba(0, 0, 0, 0.3);
+				border-radius: 6px;
+				border: 1px solid #ffffff;
+				margin-top: 45px;
+				margin-right: 30px;
+				font-size: 16px;
+				font-weight: 700;
+				cursor: pointer;
+			}
+		}
+	}
+}

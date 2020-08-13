@@ -1,0 +1,11 @@
+.nav_container {
+	display: flex;
+	justify-content: space-between;
+	height: 8vh;
+	background: #ffffff;
+	align-items : center;
+	width: 100%;
+	// position: fixed;
+	// position: absolute;
+	position: relative;
+}

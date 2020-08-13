@@ -1,0 +1,20 @@
+.posts {
+	width: 80%;
+	margin: 2rem auto;
+	margin-top: 100px;
+}
+.up_to_top {
+	position: relative;
+	z-index: 5;
+	float: right;
+	width: 60px;
+	height: 60px;
+	margin-bottom: 100px;
+	svg {
+		width: 50px;
+		height: 50px;
+		opacity: 0.6;
+	}
+}
+
+

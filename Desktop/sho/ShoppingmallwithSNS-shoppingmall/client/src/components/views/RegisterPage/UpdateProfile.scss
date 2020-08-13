@@ -1,0 +1,25 @@
+.update_container {
+	display: flex;
+	justify-content: space-around;
+
+	.left_navbar {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		margin-top: 2rem;
+		margin-left: 6rem;
+		.profile {
+			font-size: 16px;
+			font-weight: 700;
+			padding-right: 15px;
+			margin-bottom: 1rem;
+			display: block;
+		}
+		.change_password {
+			font-size: 16px;
+			font-weight: 700;
+			padding-right: 15px;
+			display: block;
+		}
+	}
+}
