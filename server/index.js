@@ -5,10 +5,10 @@ const port = 5000;
 
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
+const config = require('./config/key');
 
-const config = require('./server/config/key');
-
-//www url을 분석해서 가져올 수 있게 해주는 것
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
@@ -26,16 +26,13 @@ mongoose
 		console.log('MongoDB connected');
 	})
 	.catch((err) => console.log(err));
-require('./server/services/cache');
+require('./services/cache');
 
-app.use('/api/sns', require('./server/routes/sns'));
-app.use('/api/users', require('./server/routes/user'));
-app.use('/api/product', require('./server/routes/product'));
+app.use('/sns', require('./routes/sns'));
+app.use('/users', require('./routes/user'));
+app.use('/product', require('./routes/product'));
 
-
-app.use('/api/like', require('./server/routes/like'));
-
-
+app.use('/like', require('./routes/like'));
 
 app.use('/uploads', express.static('uploads'));
 

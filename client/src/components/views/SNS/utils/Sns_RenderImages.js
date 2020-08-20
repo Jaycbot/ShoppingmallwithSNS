@@ -14,7 +14,7 @@ function Sns_RenderImages(props) {
 		};
 		axios.post('/api/sns/upviews', data).then((response) => {
 			if (response.data.success) {
-			} else { 
+			} else {
 				alert('조회수가 올라가지 않았습니다.');
 			}
 		});
@@ -25,7 +25,6 @@ function Sns_RenderImages(props) {
 		snapshots.map((snapshot, index) => (
 			<div key={index}>
 				<img
-					
 					id={props.post._id}
 					style={{ borderRadius: '16px' }}
 					onClick={onImageClick}
@@ -33,7 +32,7 @@ function Sns_RenderImages(props) {
 					background-color="inherit"
 					height="250px"
 					alt="포스트"
-					src={`http://localhost:5000/${snapshot}`}
+					src={`/api/${snapshot}`}
 				/>
 			</div>
 		));

@@ -40,7 +40,7 @@ function Comment(props) {
 				<div key={comment._id}>
 					<img
 						style={{ width: '50px', height: '50px' }}
-						src={`http://localhost:5000/${comment.writer.image}`}
+						src={`/api/${comment.writer.image}`}
 						alt="유저이미지"
 					/>
 					<h3>{comment.writer.name}</h3>
@@ -53,7 +53,7 @@ function Comment(props) {
 				<div key={comment._id}>
 					<img
 						style={{ width: '50px', height: '50px' }}
-						src={`http://localhost:5000/${comment.writer.image}`}
+						src={`/api/${comment.writer.image}`}
 						alt="유저이미지"
 					/>
 					<h3>{comment.writer.name}</h3>

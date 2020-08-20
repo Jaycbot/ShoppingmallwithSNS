@@ -1,8 +1,12 @@
 const mongoose = require('mongoose');
 const redis = require('redis');
 const util = require('util');
-const redisUrl = 'redis://127.0.0.1:6379';
-const client = redis.createClient(redisUrl);
+const config = require('../config/key');
+const client = redis.createClient({
+	host: config.redisHost,
+	port: config.redisPort,
+	retry_strategy: () => 1000,
+});
 //promise 형태로 쓰기 위해서 promisify 해줌
 client.hget = util.promisify(client.hget);
 const exec = mongoose.Query.prototype.exec;
@@ -44,7 +48,7 @@ mongoose.Query.prototype.exec = async function () {
 			console.log(error);
 		}
 	});
-	client.expire(this.hashKey, 1800);
+	client.expire(this.hashKey, 180);
 	return result;
 };
 module.exports = {

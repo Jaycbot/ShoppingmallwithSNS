@@ -2,20 +2,18 @@ import React, { useEffect } from 'react';
 import Modal from 'react-modal';
 import ImageGallery from 'react-image-gallery';
 import RenderDescription from './RenderDescription';
-import LikeDislikes from './LikeDislikes'
-import axios from 'axios'
+import LikeDislikes from './LikeDislikes';
+import axios from 'axios';
 import swal from 'sweetalert';
 import './RenderModal.scss';
 
 import { withRouter } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-
-
 const customStyles = {
 	overlay: {
 		opacity: 1,
-		position: "fixed"
+		position: 'fixed',
 	},
 	content: {
 		margin: 'auto',
@@ -24,36 +22,28 @@ const customStyles = {
 		overflow: 'hidden',
 		background: '#FFFFFF',
 	},
-
 };
 
-
 function RenderModal(props) {
-
 	const user = useSelector((state) => state.user.userData);
 
 	useEffect(() => {
 		Modal.setAppElement('#root');
 	}, []);
 
-
 	const handleCancel = () => {
 		props.setVisible(false);
 	};
 
-	
 	let snapshots = [];
 	props.post.snapshots.map((snapshot) => {
 		snapshots.push({
-			original: `http://localhost:5000/${snapshot}`,
-			thumbnail: `http://localhost:5000/${snapshot}`,
+			original: `/api/${snapshot}`,
+			thumbnail: `/api/${snapshot}`,
 		});
 	});
 
-
-
 	const removeItem = (snsId) => {
-
 		const data = {
 			id: snsId,
 		};
@@ -77,15 +67,11 @@ function RenderModal(props) {
 				swal('취소하셨습니다.');
 			}
 		});
+	};
 
-	}
-
-
-	const editPage = (info)=>{
+	const editPage = (info) => {
 		props.history.push(`/edit/${info._id}`);
-	}
-	
-
+	};
 
 	return (
 		<div className="aaa">
@@ -110,21 +96,20 @@ function RenderModal(props) {
 						</div>
 
 						<br />
-						<LikeDislikes modal useId={localStorage.getItem('userId')} commentId={props.post._id} />
-
-
+						<LikeDislikes
+							modal
+							useId={localStorage.getItem('userId')}
+							commentId={props.post._id}
+						/>
 
 						{user && user._id === props.post.writer._id && (
 							<button onClick={() => removeItem(props.post._id)}>삭제</button>
 						)}
-						
+
 						{user && user._id === props.post.writer._id && (
 							<button onClick={() => editPage(props.post)}>수정</button>
 						)}
-
-
 					</div>
-
 				</div>
 			</Modal>
 		</div>
