@@ -1,7 +1,7 @@
 import React from 'react'
 import { withRouter, Link } from 'react-router-dom';
 import { ShoppingCartOutlined } from '@ant-design/icons'
-import {Badge} from 'antd'
+import bag from '../../../Img/bag.png'
 import { useSelector } from "react-redux";
 
 function CartPageIcon() {
@@ -11,12 +11,12 @@ function CartPageIcon() {
 
         <div className="cartNav_container">
             <button>
-            <Badge count={user.userData && user.userData.cart.length}> 
-				<Link to="/user/cart" style={{ marginRight: -22 , color:'#667777'}}>
-                    <ShoppingCartOutlined style={{ fontSize: 30, marginBottom: 3 }} />
-				</Link>
-	
-            </Badge> 
+            <div count={user.userData && user.userData.cart.length}> 
+            <Link to="/user/cart">
+                <img src={bag} alt="img"></img>
+                </Link>
+        </div>
+            
 			</button>
         </div>
     )

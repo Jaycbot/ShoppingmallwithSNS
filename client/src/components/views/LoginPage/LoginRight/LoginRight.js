@@ -99,6 +99,7 @@ class LoginRight extends Component {
             console.log("Image URL: " + profile.getImageUrl());
             console.log("Email: " + profile.getEmail());
             console.log("total", googleUser.getAuthResponse());
+            
           },
           error => {
             alert(JSON.stringify(error, undefined, 2));
@@ -125,7 +126,7 @@ class LoginRight extends Component {
         <ul>
           <li>
             <button
-              onClick={this.prepareLoginButton}
+              onClick={this.loginWithGoogle}
               style={{ backgroundColor: "white" }}
               className="googleLoginBtn"
               ref="googleLoginBtn"
@@ -139,14 +140,23 @@ class LoginRight extends Component {
                 }}
                 src="https://pbs.twimg.com/profile_images/770139154898382848/ndFg-IDH_400x400.jpg"
               />
-              <div style={{ border: "none", color: "gray" }}>
+              <div type="sumit" style={{ border: "none", color: "gray" }}>
                 <span>Google로 계속하기</span>
               </div>
 
             </button>
           </li>
           <li>
-          <div className="fb-login-button" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" data-width=""></div>
+          <div 
+          className="fb-login-button" 
+          data-size="large" 
+          data-button-type="continue_with" 
+          data-layout="default" 
+          data-auto-logout-link="false"
+           data-use-continue-as="false" 
+           data-width="">
+             
+           </div>
           </li>
         </ul>
       </div>

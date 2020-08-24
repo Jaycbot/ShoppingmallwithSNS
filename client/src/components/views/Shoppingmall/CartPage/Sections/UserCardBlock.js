@@ -1,15 +1,12 @@
 import React from 'react'
 import './UserCardBlock.scss'
-
 function UserCardBlock(props) {
-
     const renderCartImage = (images) => {
         if(images.length > 0) {
             let image = images[0]
             return `http://localhost:5000/${image}`
         } 
     }   
-
     const renderItems = () => (
         props.products && props.products.map((product, index) => (
             <tr key={index} style={{ fontSize: '15px'}}>
@@ -35,8 +32,6 @@ function UserCardBlock(props) {
             </tr>
         ))
     )
-
-
     return (
         <div>
             <table>
@@ -49,14 +44,11 @@ function UserCardBlock(props) {
                         <th>주문관리</th>
                     </tr>
                 </thead>
-
                 <tbody>
                     {renderItems()}
                 </tbody>
-                
             </table>
         </div>
     )
 }
-
 export default UserCardBlock

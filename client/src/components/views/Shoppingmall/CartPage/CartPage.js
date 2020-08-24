@@ -5,7 +5,7 @@ import UserCardBlock from './Sections/UserCardBlock';
 import { Empty, Result } from 'antd';
 import Paypal from '../utils/Paypal'
 import RequestPay from '../utils/Payment/RequestPay'
-
+import './CartPage.scss'
 
 function CartPage(props) {
     const user = useSelector((state) => state.user)
@@ -81,20 +81,26 @@ function CartPage(props) {
 
 
     return (
-        <div style={{ width: '85%', margin: '3rem auto' }}>
-            <h1>장바구니</h1>
-
-            <div>
-                <UserCardBlock
-                    products={user.cartDetail}
-                    removeItem={removeFromCart}
-                />
+        <div className="cart_wrapper">
+            <div style={{ width: '85%', margin: '3rem auto' }}>
+                <header>
+                    <div className="cart_page">
+                        <p>장바구니</p>
+                    </div>
+                </header>
+                <div>
+                    <UserCardBlock
+                        products={user.cartDetail}
+                        removeItem={removeFromCart}
+                    />
+                </div>
             </div>
-
             {ShowTotal ?
-                <div style={{ marginTop: '3rem' }}>
+
+                <div className="pay_won" style={{ marginTop: '3rem' }}>
                     <h2>총 결제금액 {Total}원</h2>
                 </div>
+
                 : ShowSuccess ?
                     <Result
                         status="success"
@@ -110,32 +116,24 @@ function CartPage(props) {
                         <Empty description={false} />
                         <p>장바구니에 담긴 상품이 없습니다</p>
                     </div>
-            }
-
-
-            {ShowTotal &&
-                <Paypal
-                    total={Total}
-                    onSuccess={transactionSuccess}
-                />
 
             }
 
-            {ShowTotal &&
-                <RequestPay
+            <div className="pay">
+                {ShowTotal &&
+                    <Paypal
+                        total={Total}
+                        onSuccess={transactionSuccess}
+                    />
 
-                    total={Total}
-                    onSuccess={transactionSuccess} />}
+                }
 
+                {ShowTotal &&
+                    <RequestPay
 
-
-
-
-
-
-
-
-
+                        total={Total}
+                        onSuccess={transactionSuccess} />}
+            </div>
         </div>
     )
 }
