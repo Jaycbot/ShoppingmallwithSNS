@@ -4,8 +4,7 @@ import sanitize from 'sanitize-html';
 import './RenderDescription.scss';
 import axios from 'axios';
 import { Input } from 'antd';
-
-// import LikeDislikes from './LikeDislikes'
+import { RoutingVariable } from '../../../Config';
 
 function RenderDescription(props) {
 	const user = useSelector((state) => state.user.userData);
@@ -23,7 +22,7 @@ function RenderDescription(props) {
 	}, [update]);
 	const renderProfileImage = () => {
 		if (props.post && props.post.writer.image) {
-			return `http://localhost:5000/${props.post.writer.image}`;
+			return `${RoutingVariable}${props.post.writer.image}`;
 		} else {
 			return 'https://thumbs.dreamstime.com/b/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg';
 		}
@@ -107,7 +106,7 @@ function RenderDescription(props) {
 				<div style={{ display: 'flex' }}>
 					<img
 						style={{ width: '35px', height: '35px', borderRadius: '16px' }}
-						src={`http://localhost:5000/${comment.writer.image}`}
+						src={`${RoutingVariable}${comment.writer.image}`}
 						alt="유저이미지"
 					/>
 					<h3>&nbsp;&nbsp;{comment.writer.name}</h3>
@@ -134,16 +133,10 @@ function RenderDescription(props) {
 		});
 	};
 
-
-
-
-
-
 	return (
 		<div className="description_container">
 			<div className="post_info">
 				<div className="post_user_info">{renderPostUser()}</div>
-				
 
 				{/* <div className="post_description"></div> */}
 			</div>
