@@ -44,17 +44,9 @@ router.post('/login', (req, res) => {
 						.json({ loginSuccess: true, userId: user._id });
 				});
 			} else {
-				const user = new User({ email: req.body.profile.id });
-				user.save((err, userInfo) => {
-					if (err) return res.json({ success: false, err });
-					user.generateToken((err, user) => {
-						if (err) return res.status(400).send(err);
-
-						res
-							.cookie('x_auth', user.token)
-							.status(200)
-							.json({ loginSuccess: true, userId: user._id });
-					});
+				res.json({
+					loginSuccess: false,
+					message: '존재하지 않는 아이디 입니다.',
 				});
 			}
 		});
@@ -85,7 +77,7 @@ router.post('/login', (req, res) => {
 			});
 		});
 	}
-}); 
+});
 
 router.get('/auth', auth, (req, res) => {
 	res.status(200).json({
@@ -264,26 +256,25 @@ router.post('/successBuy', auth, (req, res) => {
 			});
 		}
 	);
-}); 
+});
 
 router.post('/admin', (req, res) => {
 	let uterm = req.body.userSearchTerm;
-	
+
 	if (uterm) {
 		User.find({})
-			.find({ $text: { $search: uterm }}) 
+			.find({ $text: { $search: uterm } })
 			.exec((err, users) => {
-				if (err) return res.status(400).send("User 전체 조회 실패.");
-				res.status(200).json({ success : true, users});
-			})
+				if (err) return res.status(400).send('User 전체 조회 실패.');
+				res.status(200).json({ success: true, users });
+			});
 	} else {
-		User.find({}) 
-		.exec((err, users) => {
-			if (err) return res.status(400).send("User 전체 조회 실패.");
-			res.status(200).json({ success : true, users});
-		})
+		User.find({}).exec((err, users) => {
+			if (err) return res.status(400).send('User 전체 조회 실패.');
+			res.status(200).json({ success: true, users });
+		});
 	}
-}); 
+});
 
 router.post('/uploadImages', upload.single('files'), (req, res) => {
 	res.status(200).json({ success: true, filePath: req.file.path });
@@ -317,12 +308,12 @@ router.post('/updatePassword', (req, res) => {
 					$set: {
 						password: req.body.newPassword,
 					},
-				}, 
+				},
 				(err, user) => {
 					if (err) return res.json({ success: false, err });
 					res.status(200).json({ success: true, user });
 				}
-			); 
+			);
 		});
 	});
 });
@@ -334,53 +325,52 @@ router.post('/withdraw', (req, res) => {
 	});
 });
 
-router.post("/roleAdmin",(req, res) => {
+router.post('/roleAdmin', (req, res) => {
 	User.findOneAndUpdate(
-		{$or : [
-			{ role: 0, _id: req.body._id },
-			{ role: 1, _id: req.body._id },
-		]},  
-	  { $set: { role: 1 } },
-	  { new: true }
+		{
+			$or: [
+				{ role: 0, _id: req.body._id },
+				{ role: 1, _id: req.body._id },
+			],
+		},
+		{ $set: { role: 1 } },
+		{ new: true }
 	).exec((err, doc) => {
-	  if (err) return res.status(400).json({ success: false, err });
-	  return res.status(200).json({ success: true, doc });
+		if (err) return res.status(400).json({ success: false, err });
+		return res.status(200).json({ success: true, doc });
 	});
-  });
+});
 
-
-  
-  router.post("/roleUser",(req, res) => {
+router.post('/roleUser', (req, res) => {
 	User.findOneAndUpdate(
-	  {$or : [
-		  { role: 2, _id: req.body._id },
-		  { role: 1, _id: req.body._id },
-	  ]},
-	  { $set: { role: 0 } },
-	  { new: true }
+		{
+			$or: [
+				{ role: 2, _id: req.body._id },
+				{ role: 1, _id: req.body._id },
+			],
+		},
+		{ $set: { role: 0 } },
+		{ new: true }
 	).exec((err, doc) => {
-	  if (err) return res.status(400).json({ success: false, err });
-	  return res.status(200).json({ success: true, doc });
+		if (err) return res.status(400).json({ success: false, err });
+		return res.status(200).json({ success: true, doc });
 	});
-  });
+});
 
-  router.post("/roleSeller",(req, res) => {
+router.post('/roleSeller', (req, res) => {
 	User.findOneAndUpdate(
-		{$or : [
-			{ role: 0, _id: req.body._id },
-			{ role: 1, _id: req.body._id },
-  
-		]},
-	  { $set: { role: 2 } },
-	  { new: true }
+		{
+			$or: [
+				{ role: 0, _id: req.body._id },
+				{ role: 1, _id: req.body._id },
+			],
+		},
+		{ $set: { role: 2 } },
+		{ new: true }
 	).exec((err, doc) => {
-	  if (err) return res.status(400).json({ success: false, err });
-	  return res.status(200).json({ success: true, doc });
+		if (err) return res.status(400).json({ success: false, err });
+		return res.status(200).json({ success: true, doc });
 	});
-  });
-
-
-
-
+});
 
 module.exports = router;
