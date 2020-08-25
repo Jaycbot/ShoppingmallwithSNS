@@ -6,6 +6,8 @@ import { updateUser } from '../../../../_actions/user_action';
 import { Button } from 'antd';
 import swal from 'sweetalert';
 import './Update_Profile.scss';
+import { RoutingVariable } from '../../../Config';
+
 function Update_Profile(props) {
 	const user = useSelector((state) => state.user.userData);
 	const [id, setId] = useState('');
@@ -24,9 +26,7 @@ function Update_Profile(props) {
 
 	const imageRender = () => {
 		if (userImage) {
-			return (
-				<img src={`http://localhost:5000/${userImage}`} alt="프로필사진" />
-			);
+			return <img src={`${RoutingVariable}${userImage}`} alt="프로필사진" />;
 		} else {
 			return (
 				<img

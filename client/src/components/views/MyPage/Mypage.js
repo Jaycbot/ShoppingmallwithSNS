@@ -3,35 +3,32 @@ import { useSelector } from 'react-redux';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 import { EditOutlined } from '@ant-design/icons';
-import RenderPosts from '../SNS/utils/RenderPosts'
+import RenderPosts from '../SNS/utils/RenderPosts';
 import './Mypage.scss';
-import SearchWord from './SearchWord/SearchWord'
+import SearchWord from './SearchWord/SearchWord';
+import { RoutingVariable } from '../../Config';
 
 function Mypage(props) {
 	const user = useSelector((state) => state.user.userData);
 	const [posts, setPosts] = useState([]);
-
-	const [Word, setWord] = useState("")
-
+	const [Word, setWord] = useState('');
 
 	useEffect(() => {
 		if (user) {
-			axios.get(`/api/sns/getsnsposts?id=${user._id}`)
-				.then((response) => {
-					if (response.data.success) {
-						setPosts(response.data.posts);
-					} else {
-						alert('포스트 불러오기에 실패했습니다.');
-					}
-				});
+			axios.get(`/api/sns/getsnsposts?id=${user._id}`).then((response) => {
+				if (response.data.success) {
+					setPosts(response.data.posts);
+				} else {
+					alert('포스트 불러오기에 실패했습니다.');
+				}
+			});
 		}
 	}, [user]);
 
-
-	const getWord =(body)=>{
-		
+	const getWord = (body) => {
 		if (user) {
-			axios.get(`/api/sns/getsnsposts?id=${user._id}&word=${body.word}`)
+			axios
+				.get(`/api/sns/getsnsposts?id=${user._id}&word=${body.word}`)
 				.then((response) => {
 					if (response.data.success) {
 						setPosts(response.data.posts);
@@ -40,22 +37,19 @@ function Mypage(props) {
 					}
 				});
 		}
+	};
 
-	}
-
-
-
-	const retrievePosts = (newSearchTerm)=>{
+	const retrievePosts = (newSearchTerm) => {
 		let body = {
-			word : newSearchTerm,
-		}
-		setWord(newSearchTerm)
-		getWord(body)		
-	}
+			word: newSearchTerm,
+		};
+		setWord(newSearchTerm);
+		getWord(body);
+	};
 
 	const renderImage = () => {
 		if (user && user.image) {
-			return <img src={`http://localhost:5000/${user.image}`} />;
+			return <img src={`${RoutingVariable}${user.image}`} />;
 		} else {
 			return (
 				<img
@@ -68,7 +62,6 @@ function Mypage(props) {
 	const loadUpdatePage = () => {
 		props.history.push('/update');
 	};
-
 
 	return (
 		<div className="container">
@@ -84,8 +77,8 @@ function Mypage(props) {
 						수정하기
 					</button>
 				</div>
-				<div style={{display: 'flex'}}>
-				<a href="/shoppingmall/history">주문내역</a>
+				<div style={{ display: 'flex' }}>
+					<a href="/shoppingmall/history">주문내역</a>
 				</div>
 			</div>
 
