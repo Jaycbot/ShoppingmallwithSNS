@@ -41,6 +41,23 @@ router.get('/getposts', auth, async (req, res) => {
 	res.status(200).json({ success: true, posts });
 });
 
+router.get('/reviewposts', auth, async (req, res) => {
+	
+	let skip = parseInt(req.query.skip);
+	let limit = parseInt(req.query.limit);
+
+	const posts = await SNSPost.find()
+		.sort({ views: -1 })
+		.skip(skip)
+		.limit(limit)
+		.populate('writer')
+		.cache({
+			key: req.user._id,
+		});
+	
+	res.status(200).json({ success: true, posts });
+});
+
 router.post('/upviews', (req, res) => {
 	SNSPost.findOneAndUpdate(
 		{ _id: req.body.id },

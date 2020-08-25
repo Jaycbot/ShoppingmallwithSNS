@@ -9,17 +9,18 @@ const { Meta } = Card;
 
 function ReviewCards() {
 	const [posts, setPosts] = useState([]);
-
-	const limit = 4;
 	let skip = 0;
+	const limit = 4;
 
 	useEffect(() => {
+		
 		getPosts();
+
 	}, []);
 
 	const getPosts = () => {
 		axios
-			.get(`/api/sns/getposts?skip=${skip}&limit=${limit}`)
+			.get(`/api/sns/reviewposts?skip=${skip} &limit=${limit}`)
 			.then((response) => {
 				if (response.data.success) {
 					if (response.data.posts) {

@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import {Button, Form, Input} from 'antd';
 import {useSelector} from 'react-redux'
 import FileUpload from '../utils/FileUpload'
+import DescriptionUpload from '../utils/DescriptionUpload'
 import Axios from 'axios';
 
 const { TextArea } = Input;
@@ -21,7 +22,7 @@ function UploadProducPage(props) {
     const userInfo = useSelector((state) => state.user.userData);
 
     const [Title, setTitle] = useState("")
-    const [Description, setDescription] = useState("")
+    const [Description, setDescription] = useState([])
     const [Price, setPrice] = useState(0)
     const [Continent, setContinent] = useState(1)
     const [Images, setImages] = useState([])
@@ -30,8 +31,8 @@ function UploadProducPage(props) {
         setTitle(event.currentTarget.value)
     }
 
-    const descriptionChangeHandler = (event) => {
-        setDescription(event.currentTarget.value)
+    const descriptionChangeHandler = (newDescription) => {
+        setDescription(newDescription)
     }
 
     const priceChangeHandler =(event) => {
@@ -86,15 +87,14 @@ function UploadProducPage(props) {
 
                 <FileUpload refreshFunction={updateImages}/>
 
-
+                <br /> 
                 <br />
-                <br />
-                <label>이름</label>
+                <label>상품명</label>
                 <Input onChange={titleChangeHandler} value={Title} />
                 <br/>
                 <br/>
                 <label>설명</label>
-                <TextArea onChange={descriptionChangeHandler} value={Description} />
+                <DescriptionUpload refreshFunction={descriptionChangeHandler}/>
                 <br/>
                 <br/>
                 <label>가격($)</label>

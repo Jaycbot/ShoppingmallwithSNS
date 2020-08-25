@@ -11,7 +11,7 @@ function EventPages() {
 
     const [Products, setProducts] = useState([])
     const [Skip, setSkip] = useState(0)
-    const [Limit, setLimit] = useState(0)
+    const [Limit, setLimit] = useState(8)
 
     useEffect(() => {
         
@@ -26,10 +26,10 @@ function EventPages() {
 
     const getProducts = (body) => {
 
-        axios.post('/api/product/products', body)
+        axios.post('/api/product/newproducts', body)
             .then(response => {
                 if(response.data.success) {
-                        setProducts(response.data.productInfo.sort((a, b) => b.createdAt.localeCompare(a.createdAt)))
+                        setProducts(response.data.productInfo)
                 } else {
                     alert("상품들을 가져오는데 실패했습니다.")
                 }
@@ -70,7 +70,7 @@ function EventPages() {
                             </p>
                         </div>
                     </div>
-                </section>
+                </section><br/><br/><br/>
                 <section>
                     <div className="goods-card-container in-catalog" style={{display: 'flex' , justifyContent: 'center'}}>
                         <Row gutter={[32,32]}>            

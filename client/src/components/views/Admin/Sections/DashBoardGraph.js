@@ -5,7 +5,6 @@ import {
 } from 'recharts';
 import { Row } from 'antd';
 
-
 function DashBoardGraph() {
 
     const [Sold, setSold] = useState(0)
@@ -31,18 +30,19 @@ function DashBoardGraph() {
     const RADIAN = Math.PI / 180;
 
     const renderCustomizedLabel = ({
-    cx, cy, midAngle, innerRadius, outerRadius, percent,
+    cx, cy, midAngle, innerRadius, outerRadius, percent, payload
     }) => {
-    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+    const radius = innerRadius + (outerRadius - innerRadius) * 0.59;
     const x = cx + radius * Math.cos(-midAngle * RADIAN);
     const y = cy + radius * Math.sin(-midAngle * RADIAN);
     return (
-        <text x={x} y={y} fill="gray" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
-        {`${(percent * 100).toFixed(0)}%`}
+        <text x={x} y={y} fill="gray" textAnchor='middle' dominantBaseline="central">
+        {`${payload.name}${(percent * 100).toFixed(0)}%`}
         </text>
     );
     };
 
+    console.log(typeof(data.name));
 
     useEffect(() => {
 
@@ -138,7 +138,7 @@ function DashBoardGraph() {
                     cx={400}
                     cy={200}
                     labelLine={false}
-                    label={renderCustomizedLabel}
+                    label={renderCustomizedLabel} 
                     outerRadius={200}
                     fill="#8884d8"
                     dataKey="value" 

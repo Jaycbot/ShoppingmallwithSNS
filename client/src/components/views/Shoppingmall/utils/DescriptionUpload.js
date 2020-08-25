@@ -31,7 +31,7 @@ function DescriptionUpload(props) {
     const deleteHandler = (image) => {
         const currentIndex = Images.indexOf(image)
 
-        let newImages = [...Images]
+        let newImages = [...Images] 
         newImages.splice(currentIndex, 1)
 
         setImages(newImages)

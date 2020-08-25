@@ -21,7 +21,33 @@ var upload = multer({ storage: storage }).single('file');
 router.post('/image', (req, res) => {
 	// 가져온 이미지를 저장을 해주면 된다.
 
-	upload(req, res, (err) => {
+	upload(req, res, (err) => { 
+		if (err) {
+			return req.json({ success: false, err });
+		}
+		return res.json({
+			success: true,
+			filePath: res.req.file.path,
+			fileName: res.req.file.filename,
+		});
+	});
+});
+
+var desstorage = multer.diskStorage({
+	destination: function (req, file, cb) {
+		cb(null, 'uploads/shop');
+	},
+	filename: function (req, file, cb) {
+		cb(null, `${Date.now()}_${file.originalname}`);
+	},
+});
+
+var desupload = multer({ storage: desstorage }).single('file');
+
+router.post('/desimage', (req, res) => {
+	// 가져온 이미지를 저장을 해주면 된다.
+
+	desupload(req, res, (err) => { 
 		if (err) {
 			return req.json({ success: false, err });
 		}
@@ -78,11 +104,29 @@ router.post('/products', (req, res) => {
 	}
 });
 
-router.post('/sellerProducts', (req, res) => {
+router.post('/newproducts', (req, res) => {
 	//product collection에 들어 있는 모든 상품 정보를 가져오기
 
 	let limit = req.body.limit ? parseInt(req.body.limit) : 1000;
 	let skip = req.body.skip ? parseInt(req.body.skip) : 0;
+	
+		Product.find({})
+			.populate('wirter')
+			.skip(skip)
+			.limit(limit)
+			.sort({ createdAt: -1 })
+			.exec((err, productInfo) => {
+				if (err) return res.status(400).json({ success: false, err });
+				return res
+					.status(200)
+					.json({ success: true, productInfo, postSize: productInfo.length });
+			});
+	
+});
+
+router.post('/sellerProducts', (req, res) => {
+	//product collection에 들어 있는 모든 상품 정보를 가져오기
+
 	let term = req.body.searchTerm;
 	let writer = req.body.writer;
 
@@ -90,8 +134,6 @@ router.post('/sellerProducts', (req, res) => {
 		Product.find({ writer: writer })
 			.find({ $text: { $search: term } })
 			.populate('wirter')
-			.skip(skip)
-			.limit(limit)
 			.exec((err, productInfo) => {
 				if (err) return res.status(400).json({ success: false, err });
 				return res
@@ -101,8 +143,6 @@ router.post('/sellerProducts', (req, res) => {
 	} else {
 		Product.find({ writer: writer })
 			.populate('wirter')
-			.skip(skip)
-			.limit(limit)
 			.exec((err, productInfo) => {
 				if (err) return res.status(400).json({ success: false, err });
 				return res.status(200).json({ success: true, productInfo });

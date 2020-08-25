@@ -28,8 +28,7 @@ function HotCards() {
         axios.post('/api/product/products', body)
             .then(response => {
                 if(response.data.success) {
-                        setProducts(response.data.productInfo)
-                   
+                    setProducts(response.data.productInfo)
                 } else {
                     alert("상품들을 가져오는데 실패했습니다.")
                 }

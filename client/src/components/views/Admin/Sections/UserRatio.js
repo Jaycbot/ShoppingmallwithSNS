@@ -42,6 +42,21 @@ const getUsers = (body) => {
       })
 }
 
+const RADIAN = Math.PI / 180;
+
+const renderCustomizedLabel = ({
+  cx, cy, midAngle, innerRadius, outerRadius, percent, payload
+  }) => {
+  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+  return (
+      <text x={x} y={y} fill="gray" textAnchor='middle' dominantBaseline="central">
+      {`${payload.name} ${payload.value}`}
+      </text>
+  );
+  };
+
   const data = [
     { name: '판매자', value: Seller, fill : '#86e57f'}, { name: '구매자', value: Customer, fill : '#6699ff' },
   ];
@@ -50,7 +65,18 @@ const getUsers = (body) => {
         <div style={{marginTop: '50px'}}>
             <h1 style={{marginLeft: '50px'}}>사용자 비율</h1>
             <PieChart width={800} height={500}>
-              <Pie dataKey="value" startAngle={180} endAngle={0} data={data} cx={400} cy={200} outerRadius={100} fill="#8884d8" label />
+              <Pie 
+                dataKey="value" 
+                startAngle={180} 
+                endAngle={0} 
+                data={data} 
+                cx={400} 
+                cy={200} 
+                outerRadius={100} 
+                fill="#8884d8" 
+                labelLine={false}
+                label={renderCustomizedLabel} 
+              />
             </PieChart>
         </div>
     )
