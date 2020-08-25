@@ -99,6 +99,8 @@ class LoginRight extends Component {
 				Axios.post('/api/users/login', data).then((response) => {
 					if (response.data.loginSuccess) {
 						this.props.history.push('/');
+					} else {
+						alert('아이디가 존재하지 않습니다.');
 					}
 				});
 			},
