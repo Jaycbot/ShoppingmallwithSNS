@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { withRouter } from "react-router-dom";
-import "./LoginLeft.scss";
-import { loginUser } from '../../../../_actions/user_action'
+import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom';
+import './LoginLeft.scss';
+import { loginUser } from '../../../../_actions/user_action';
 import { useDispatch } from 'react-redux';
 
 function LoginLeft(props) {
@@ -28,51 +28,48 @@ function LoginLeft(props) {
 			}
 		});
 	};
-	 
-    return (
-      <div className="login_main_left">
-          <form onClick={onSubmitHandler}>
-        <div>
-            
-          <label htmlFor="id" className="input_wrapper">
-            <input
-              type="email"
-              value={Email}
-              placeholder="Email"
-              onChange={onEmailHandler}
-              className="info_input"
-            />
-          </label>
-          <div className="forgot_info_div">
-            <a className="forgot_info" href="/">
-              ID가 기억이 나지 않으세요?
-            </a>
-          </div>
-          <label htmlFor="pwd" className="input_wrapper">
-            <input
-             
-              type="password"
-              value={Password}
-              placeholder="비밀번호를 입력해주세요"
-              onChange={onPasswordHandler}
-              className="info_input"
-            ></input>
-          </label>
-          <div className="forgot_info_div">
-            <a className="forgot_info" href="/">
-              비밀번호를 잊으셨나요?
-            </a>
-          </div>
-          <div className="login_btn_div">
-            <button type="submit" className="login_btn">
-              로그인
-            </button>
-          </div>
-         
-        </div>
-        </form>
-      </div>
-    );
-  }
+
+	return (
+		<div className="login_main_left">
+			<form onSubmit={onSubmitHandler}>
+				<div>
+					<label htmlFor="id" className="input_wrapper">
+						<input
+							type="email"
+							value={Email}
+							placeholder="Email"
+							onChange={onEmailHandler}
+							className="info_input"
+						/>
+					</label>
+					<div className="forgot_info_div">
+						<a className="forgot_info" href="/">
+							ID가 기억이 나지 않으세요?
+						</a>
+					</div>
+					<label htmlFor="pwd" className="input_wrapper">
+						<input
+							type="password"
+							value={Password}
+							placeholder="비밀번호를 입력해주세요"
+							onChange={onPasswordHandler}
+							className="info_input"
+						></input>
+					</label>
+					<div className="forgot_info_div">
+						<a className="forgot_info" href="/">
+							비밀번호를 잊으셨나요?
+						</a>
+					</div>
+					<div className="login_btn_div">
+						<button type="submit" className="login_btn">
+							로그인
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	);
+}
 
 export default withRouter(LoginLeft);
