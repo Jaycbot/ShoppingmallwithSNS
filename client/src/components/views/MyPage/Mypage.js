@@ -3,19 +3,19 @@ import { useSelector } from 'react-redux';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 import { EditOutlined } from '@ant-design/icons';
-import RenderPosts from '../SNS/utils/RenderPosts'
+import RenderPosts from '../SNS/utils/RenderPosts';
 import './Mypage.scss';
-import SearchWord from './SearchWord/SearchWord'
+import SearchWord from './SearchWord/SearchWord';
+import { RoutingVariable } from '../../Config';
 
 function Mypage(props) {
 	const user = useSelector((state) => state.user.userData);
 	const [posts, setPosts] = useState([]);
-	const [Word, setWord] = useState("")
-	
+	const [Word, setWord] = useState('');
+
 	useEffect(() => {
 		if (user) {
-			axios.get(`/api/sns/getsnsposts?id=${user._id}`)
-			.then((response) => {
+			axios.get(`/api/sns/getsnsposts?id=${user._id}`).then((response) => {
 				if (response.data.success) {
 					setPosts(response.data.posts);
 				} else {
@@ -23,14 +23,12 @@ function Mypage(props) {
 				}
 			});
 		}
-		
 	}, [user]);
-	
 
-	const getWord =(body)=>{
-		
+	const getWord = (body) => {
 		if (user) {
-			axios.get(`/api/sns/getsnsposts?id=${user._id}&word=${body.word}`)
+			axios
+				.get(`/api/sns/getsnsposts?id=${user._id}&word=${body.word}`)
 				.then((response) => {
 					if (response.data.success) {
 						setPosts(response.data.posts);
@@ -39,22 +37,19 @@ function Mypage(props) {
 					}
 				});
 		}
+	};
 
-	}
-
-
-
-	const retrievePosts = (newSearchTerm)=>{
+	const retrievePosts = (newSearchTerm) => {
 		let body = {
-			word : newSearchTerm,
-		}
-		setWord(newSearchTerm)
-		getWord(body)		
-	}
+			word: newSearchTerm,
+		};
+		setWord(newSearchTerm);
+		getWord(body);
+	};
 
 	const renderImage = () => {
 		if (user && user.image) {
-			return <img src={`http://localhost:5000/${user.image}`} />;
+			return <img src={`${RoutingVariable}${user.image}`} />;
 		} else {
 			return (
 				<img
@@ -68,11 +63,8 @@ function Mypage(props) {
 		props.history.push('/update');
 	};
 
-
 	return (
 		<div className="container">
-
-			
 			<div className="list_container">
 				<div className="profile_image">{renderImage()}</div>
 				<div className="userInfo">
@@ -85,23 +77,19 @@ function Mypage(props) {
 						수정하기
 					</button>
 				</div>
-				<div style={{display: 'flex'}}>
-				<a href="/shoppingmall/history">주문내역</a>
+				<div style={{ display: 'flex' }}>
+					<a href="/shoppingmall/history">주문내역</a>
 				</div>
 			</div>
 
-
-			<div className = "input_search">
-                <SearchWord
-                    refreshFunction={retrievePosts} />
-            </div>
-
+			<div className="input_search">
+				<SearchWord refreshFunction={retrievePosts} />
+			</div>
 
 			<div className="user_posts">
 				<h2>내 포스트</h2>
 				<RenderPosts posts={posts} />
 			</div>
-
 		</div>
 	);
 }

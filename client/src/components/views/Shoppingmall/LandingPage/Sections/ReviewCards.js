@@ -4,12 +4,12 @@ import axios from 'axios';
 import RenderImages from '../../../SNS/utils/Sns_RenderImages';
 import RenderText from '../../../SNS/utils/RenderText';
 import './Cards.scss';
-
+import { RoutingVariable } from '../../../../Config';
 const { Meta } = Card;
 
 function ReviewCards() {
 	const [posts, setPosts] = useState([]);
-	
+
 	const limit = 4;
 	let skip = 0;
 
@@ -34,33 +34,37 @@ function ReviewCards() {
 
 	const renderProfileImage = (post) => {
 		if (post && post.writer.image) {
-			return `http://localhost:5000/${post.writer.image}`;
+			return `${RoutingVariable}${post.writer.image}`;
 		} else {
 			return 'https://thumbs.dreamstime.com/b/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg';
 		}
 	};
 
 	const renderPosts = (posts) =>
-		posts.map((post) => { // (
-			if (post && post.writer) {  // 수정한 내용 원래는 없음
-			return <Col key={post._id} lg={6} xs={24}>
-				<Card
-					style={{
-						width: 250,
-						border: '2px solid #e8ebed',
-						borderRadius: '20px',
-					}}
-					cover={<RenderImages post={post} />}
-				>
-					<Meta
-						avatar={<Avatar src={renderProfileImage(post)} />}
-						description={<RenderText post={post} />}
-					/>
-				</Card>
-			</Col>
-				}// 수정한 내용
+		posts.map((post) => {
+			// (
+			if (post && post.writer) {
+				// 수정한 내용 원래는 없음
+				return (
+					<Col key={post._id} lg={6} xs={24}>
+						<Card
+							style={{
+								width: 250,
+								border: '2px solid #e8ebed',
+								borderRadius: '20px',
+							}}
+							cover={<RenderImages post={post} />}
+						>
+							<Meta
+								avatar={<Avatar src={renderProfileImage(post)} />}
+								description={<RenderText post={post} />}
+							/>
+						</Card>
+					</Col>
+				);
+			} // 수정한 내용
 		}); // ))
-	return ( 
+	return (
 		<div>
 			<section className="hot_section" style={{ backgroundColor: 'black' }}>
 				<div className="hot_div_h2" style={{ marginTop: '3rem' }}>

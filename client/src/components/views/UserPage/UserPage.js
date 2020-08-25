@@ -1,38 +1,34 @@
-import React, { useState, useEffect } from 'react'
-import { withRouter } from "react-router-dom"
+import React, { useState, useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
 import axios from 'axios';
-import RenderPosts from '../SNS/utils/RenderPosts'
-
+import RenderPosts from '../SNS/utils/RenderPosts';
+import { RoutingVariable } from '../../Config';
 
 function UserPage(props) {
+	const [Posts, setPosts] = useState([]);
+	const [user, setUser] = useState({});
+	const iduser = props.match.params.userId;
 
-    const [Posts, setPosts] = useState([])
-    const [user, setUser] = useState({})
-    const iduser = props.match.params.userId
+	useEffect(() => {
+		if (props && props.match) {
+			axios.get(`/api/sns/getsnsposts?id=${iduser}`).then((response) => {
+				if (response.data.success) {
+					setPosts(response.data.posts);
+				} else {
+					alert('포스트 불러오기에 실패했습니다.');
+				}
+			});
+		}
+	}, []);
+	useEffect(() => {
+		if (Posts.length > 0) {
+			setUser(Posts[0]);
+		}
+	}, [Posts]);
 
-    useEffect(() => {
-            if (props && props.match) {
-            axios.get(`/api/sns/getsnsposts?id=${iduser}`)
-                .then((response) => {
-                    if (response.data.success) {
-                        setPosts(response.data.posts);
-                       
-                    } else {
-                        alert('포스트 불러오기에 실패했습니다.');
-                    }
-                });
-    }
-    
-    }, [])
-    useEffect(()=> {
-        if(Posts.length > 0){
-            setUser(Posts[0]);
-        }
-    }, [Posts])
-
-    const renderImage = () => {
+	const renderImage = () => {
 		if (user && user.writer) {
-			return <img src={`http://localhost:5000/${user.writer.image}`} />;
+			return <img src={`${RoutingVariable}${user.writer.image}`} />;
 		} else {
 			return (
 				<img
@@ -42,25 +38,23 @@ function UserPage(props) {
 		}
 	};
 
-    return (
-        <div className="container">
+	return (
+		<div className="container">
+			<div className="list_container">
+				<div className="profile_image">{renderImage()}</div>
+				<div className="userInfo">
+					{user && user.writer && (
+						<h1>{`${user.writer.name}(${user.writer.email})`}</h1>
+					)}
+				</div>
+			</div>
 
-			
-        <div className="list_container">
-            <div className="profile_image">{renderImage()}</div>
-            <div className="userInfo">
-                {(user && user.writer) && <h1>{`${user.writer.name}(${user.writer.email})`}</h1>}
-            </div>
-  
-        </div>
-
-        <div className="user_posts">
-            <h2>내 포스트</h2>
-            <RenderPosts posts={Posts} />
-        </div>
-
-    </div>
-    )
+			<div className="user_posts">
+				<h2>내 포스트</h2>
+				<RenderPosts posts={Posts} />
+			</div>
+		</div>
+	);
 }
 
-export default withRouter(UserPage)
+export default withRouter(UserPage);
