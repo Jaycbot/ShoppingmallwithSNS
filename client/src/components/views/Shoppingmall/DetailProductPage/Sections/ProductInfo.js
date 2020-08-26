@@ -2,9 +2,8 @@ import React from 'react'
 import { Button, Descriptions, Row } from 'antd'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../../../../_actions/user_action'
-import { Link } from "react-router-dom";
-import './ProductInfo.scss'
-
+import './ProductInfo.scss' 
+import Paypal from '../../utils/Paypal'
 
 function ProductInfo(props) {
 
@@ -14,17 +13,14 @@ function ProductInfo(props) {
 
         //필요한 정보를 Cart 필드에 넣어준다.
         dispatch(addToCart(props.detail._id))
-
+    
     }
 
     return (
-
         <div width="1,0.4166666666666667" className="jtLMFf">
             <div className="iojNJW">
                 <div className="cBrSlq">
-
                     <Descriptions title="상세정보" bordered>
-
                         <Descriptions.Item label="구매량" span={2}>{props.detail.sold}</Descriptions.Item>
                         <Descriptions.Item label="조회수">{props.detail.views}</Descriptions.Item>
                         <Descriptions.Item label="가격">{props.detail.price}</Descriptions.Item>
@@ -33,31 +29,21 @@ function ProductInfo(props) {
                 <br />
                 <br />
                 <br />
-                <div className="buy_button_parent">
-                    <Link to="/user/cart">
-                        <div className="buy_box">
-                            <button onClick={clickHandler} className="buy_button" type="danger">
-                                바로 구매
-                        </button>
-                        </div>
-
-                    </Link>
-                    <Link to="/user/cart">
-                        <div className="get_cart_box">
-                            <button onClick={clickHandler} className="get_cart_button" type="danger">
-                                장바구니 담기
-                        </button>
-                        </div>
-                    </Link>
-
-
-                    <br />
-                </div>
-
+                    <div style={{ display: 'flex', justifyContent: 'center'}}>
+                        <Button size="large" shape="round" type="danger" onClick={clickHandler}>
+                            장바구니담기
+                        </Button>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '30px'}}>
+                        <Paypal 
+                            total = {props.detail.price}
+                        />
+                    </div>
+                
+                <br />
             </div>
-           
+ 
         </div>
-        
     )
 }
 
