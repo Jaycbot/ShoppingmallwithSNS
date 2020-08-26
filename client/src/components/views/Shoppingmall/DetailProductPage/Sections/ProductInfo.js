@@ -35,8 +35,8 @@ function ProductInfo(props) {
                 <br />
                 <div className="buy_button_parent">
                     <Link to="/user/cart">
-                        <div className="immediately_buy_box">
-                            <button onClick={clickHandler} className="immediately_buy_button" type="danger">
+                        <div className="buy_box">
+                            <button onClick={clickHandler} className="buy_button" type="danger">
                                 바로 구매
                         </button>
                         </div>
