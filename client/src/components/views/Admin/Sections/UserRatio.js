@@ -51,14 +51,14 @@ const renderCustomizedLabel = ({
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
   const y = cy + radius * Math.sin(-midAngle * RADIAN);
   return (
-      <text x={x} y={y} fill="gray" textAnchor='middle' dominantBaseline="central">
+      <text x={x} y={y} fill="white" textAnchor='middle' dominantBaseline="central">
       {`${payload.name} ${payload.value}`}
       </text>
   );
   };
 
   const data = [
-    { name: '판매자', value: Seller, fill : '#86e57f'}, { name: '구매자', value: Customer, fill : '#6699ff' },
+    { name: '판매자', value: Seller, fill : '#0066ff'}, { name: '구매자', value: Customer, fill : '#00ff66' },
   ];
 
     return (
@@ -71,8 +71,8 @@ const renderCustomizedLabel = ({
                 endAngle={0} 
                 data={data} 
                 cx={400} 
-                cy={200} 
-                outerRadius={160} 
+                cy={300} 
+                outerRadius={200} 
                 fill="#8884d8" 
                 labelLine={false}
                 label={renderCustomizedLabel} 

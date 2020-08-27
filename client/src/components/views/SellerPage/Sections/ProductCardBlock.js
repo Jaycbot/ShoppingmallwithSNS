@@ -78,6 +78,7 @@ function ProductCardBlock(props) {
             return `http://localhost:5000/${image}`
         } 
     }   
+    
 
     const renderItems = () => (
         Products && Products.map((product, index) => (
@@ -99,7 +100,10 @@ function ProductCardBlock(props) {
                 <td>{product.continents}</td>
                 <td style={{color : 'blue' , fontStyle: 'bodered'}}>{product.sold} 개</td>
                 <td style={{color : 'red' , fontStyle: 'bodered'}}>{product.price * product.sold} 원</td>
-                <td>{product.description}</td>
+                <td>
+                    <img style={{ width: '70px', height: '50px' }} alt="product" 
+                    src={renderProductImage(product.description)} />
+                </td>
                 <td>
                     <button onClick={() => removeItem(product._id)}>
                         삭제

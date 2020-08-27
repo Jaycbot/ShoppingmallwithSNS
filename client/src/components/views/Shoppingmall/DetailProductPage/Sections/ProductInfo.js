@@ -38,11 +38,9 @@ function ProductInfo(props) {
                         <Paypal 
                             total = {props.detail.price}
                         />
-                    </div>
-                
+                    </div>                
                 <br />
-            </div>
- 
+            </div> 
         </div>
     )
 }

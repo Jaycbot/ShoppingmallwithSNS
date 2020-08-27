@@ -7,8 +7,6 @@ import { Row } from 'antd';
 
 function DashBoardGraph() {
 
-    const [Sold, setSold] = useState(0)
-    const [Date, setDate] = useState(0)
     const [Outer, setOuter] = useState(0)
     const [Top, setTop] = useState(0)
     const [Pants, setPants] = useState(0)
@@ -42,8 +40,6 @@ function DashBoardGraph() {
     );
     };
 
-    console.log(typeof(data.name));
-
     useEffect(() => {
 
         let body ={
@@ -51,32 +47,8 @@ function DashBoardGraph() {
         }
         
         getProduct(body)
-        getUsers(body)
-
+ 
     }, [])
-
-    const getUsers = (body) => {
-      axios.post('/api/users/admin', body)
-          .then(response => {
-              if(response.data.success) {
-                const userHistory = response.data.users.map((h) => {
-                  h.history.map((u) => {return u})
-                })
-                userHistory.forEach(element => {
-                  switch(element) {
-                    case 'quantity' :
-                      setSold(element.quantity * element.price )
-                    
-                  }
-                })
-                  
-              } else {
-                  alert("유저들을 가져오는데 실패했습니다.")
-              }
-          })
-    }
-
-    console.log(Sold);
 
     const getProduct = (body) => {
         axios.post('/api/product/products', body)
@@ -116,20 +88,7 @@ function DashBoardGraph() {
     }
 
     return (
-        <div>
-            <Row justify="space-around">                
-            <div>
-                <h1 style={{marginLeft: '50px'}}>판매량</h1><br/>
-                <LineChart width={750} height={500} data={Sold}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey={Date} padding={{ left: 30, right: 30 }} />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Line type="monotone" dataKey="sold" stroke="#8884d8" activeDot={{ r: 8 }} />
-                </LineChart>
-            </div>
-
+    
             <div>
                 <h1 style={{marginLeft: '50px'}}>카테고리별 제품비율</h1><br/> 
                 <PieChart width={800} height={500}>
@@ -149,9 +108,6 @@ function DashBoardGraph() {
                     </Pie>
                 </PieChart>
             </div>
-            </Row>
-            
-        </div>
     )
 }
 
