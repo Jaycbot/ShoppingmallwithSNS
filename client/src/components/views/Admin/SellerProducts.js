@@ -80,12 +80,12 @@ function SellerProducts(props) {
         Products && Products.map((product, index) => (
             <tr key={index}>
                 <td>{product._id}</td>
-                <td>
+                <td style={{ width: '250px'}}>
                     <div className="CartGoodsDesktop__goods-info">
                     <img style={{ width: '50px', height: '50px' }} alt="product" 
                     src={renderProductImage(product.images)}/>
                         <div className="CartGoodsDesktop__goods-info-inner">
-                            <p className="CartGoodsDesktop__goods-info-name">
+                            <p className="CartGoodsDesktop__goods-info-name" >
                                 {product.title}
                             </p>
                         </div> 
