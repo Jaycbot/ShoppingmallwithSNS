@@ -16,8 +16,7 @@ function ProductDescribe(props) {
 
     }, [props.detail])
 
-    console.log(PostSize);
-
+   
     return ( 
         <div className="Box-fzpncP iIZfvh">
             <div className="Box-fzpncP cFlNGk">

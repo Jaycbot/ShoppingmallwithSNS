@@ -6,10 +6,12 @@ import LikeDislikes from './LikeDislikes';
 import axios from 'axios';
 import swal from 'sweetalert';
 import './RenderModal.scss';
-
+import { Button } from 'antd';
 import { RoutingVariable } from '../../../Config';
 import { withRouter } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+
+import LikeButton from './LikeButton'
 
 const customStyles = {
 	overlay: {
@@ -99,16 +101,16 @@ function RenderModal(props) {
 						<br />
 						<LikeDislikes
 							modal
-							useId={localStorage.getItem('userId')}
+							userId={localStorage.getItem('userId')}
 							commentId={props.post._id}
 						/>
 
 						{user && user._id === props.post.writer._id && (
-							<button onClick={() => removeItem(props.post._id)}>삭제</button>
+							<Button danger type="primary" onClick={() => removeItem(props.post._id)}>삭제</Button >
 						)}
-
+						
 						{user && user._id === props.post.writer._id && (
-							<button onClick={() => editPage(props.post)}>수정</button>
+							<Button   type="primary" onClick={() => editPage(props.post)}>수정</Button >
 						)}
 					</div>
 				</div>

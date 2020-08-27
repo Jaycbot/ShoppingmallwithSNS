@@ -4,8 +4,9 @@ import RenderImages from './Sns_RenderImages';
 import RenderText from './RenderText';
 import Comment from './Comment';
 import LikeDislikes from './LikeDislikes'
-
 import { RoutingVariable } from '../../../Config';
+
+
 const { Meta } = Card;
 function RenderPosts(props) {
 	const renderProfileImage = (post) => {
@@ -36,9 +37,8 @@ function RenderPosts(props) {
 										description={<RenderText post={post} />}
 									/>
 									<div style={{display : 'flex' , justifyContent : 'space-around'}}>
-										{/* <br/> */}
 									<Comment post={post} />
-									<LikeDislikes post={post}/>
+									<LikeDislikes post={post}/>																			
 									</div>
 								</Card>
 							</Col>

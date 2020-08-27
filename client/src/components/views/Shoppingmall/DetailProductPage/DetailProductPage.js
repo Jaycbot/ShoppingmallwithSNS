@@ -5,6 +5,7 @@ import ProductInfo from './Sections/ProductInfo'
 import ProductDescribe from './Sections/ProductDescribe'
 import { withRouter } from 'react-router-dom'
 import './DetailProductPage.scss'
+import ProductReview from './Sections/ProductReview'
 
 function DetailProductPage(props) {
 
@@ -34,6 +35,12 @@ function DetailProductPage(props) {
                     
                     <ProductInfo detail={Product}/>                   
                 </div>
+
+                <div>
+                    {/* 후기 리뷰 보기 */}
+                   <ProductReview detail={Product}/>
+                </div>
+
                 <div>
                     <ProductDescribe detail={Product}/>
                 </div>
