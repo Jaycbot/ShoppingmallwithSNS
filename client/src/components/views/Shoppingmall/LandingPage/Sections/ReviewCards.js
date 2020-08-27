@@ -67,11 +67,11 @@ function ReviewCards() {
 		}); // ))
 	return (
 		<div>
-			<section className="hot_section" style={{ backgroundColor: 'black' }}>
+			<section className="hot_section" style={{ backgroundColor: 'white' }}>
 				<div className="hot_div_h2" style={{ marginTop: '3rem' }}>
-					<h2 className="hot_h2" style={{ color: 'white', fontWeight: 'bold' }}>
+					<p className="hot_h2" style={{ color: 'black', fontWeight: 'bold' }}>
 						인기 구매후기
-					</h2>
+					</p>
 				</div>
 				<br /> <br />
 				<div style={{ display: 'flex', justifyContent: 'center' }}>

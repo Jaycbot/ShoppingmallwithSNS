@@ -1,11 +1,12 @@
 .landingPage_nav {
-	display: inline;
-	font-family: 'Courgette', cursive;
-	h1 {
+	position: relative;
+	height: 50px;
+
+	p {
+		font-size: 23px;
 		color: #1b1d1f;
 		display: inline;
 		margin-left: 1em;
 		font-weight: bold;
 	}
 }
-@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Great+Vibes&display=swap');
