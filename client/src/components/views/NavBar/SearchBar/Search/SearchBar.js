@@ -22,14 +22,6 @@ function SearchBar(props) {
     }
 
     return (
-<<<<<<< HEAD
-        <div>
-            <Search
-             placeholder="검색어를 입력하세요"
-             onSearch={SearchNav}
-             style={{ width: 400 }}
-            />
-=======
         <div className="Search_Bar">
             <div className="Search_Bar_wrapper">
                 <div className="Search_Bar_search">
@@ -47,7 +39,6 @@ function SearchBar(props) {
 
                 </div>
             </div>
->>>>>>> 0d4b929e0bb241795c63db905ec1441b6b903a34
         </div>
 
     )
