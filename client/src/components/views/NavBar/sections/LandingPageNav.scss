@@ -1,12 +1,23 @@
-.landingPage_nav {
-	position: relative;
-	height: 50px;
+// .landingPage_nav {
+// 	position: relative;
+// 	height: 50px;
 
-	p {
-		font-size: 23px;
-		color: #1b1d1f;
-		display: inline;
-		margin-left: 1em;
-		font-weight: bold;
-	}
+// 	p {
+// 		font-size: 23px;
+// 		color: #1b1d1f;
+// 		display: inline;
+// 		margin-left: 1em;
+// 		font-weight: bold;
+// 	}
+// }
+.landingPage_nav {
+    display: inline;
+    font-family: 'Courgette', cursive;
+    h1 {
+        color: #1B1D1F;
+        display: inline;
+        margin-left: 1em;
+        font-weight: bold;
+    }
 }
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Great+Vibes&display=swap');
