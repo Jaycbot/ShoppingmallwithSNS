@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import MenuCardImage from './MenuCardImage';
-import { Select, Col, Card, Row } from 'antd';
+import { Select, Col, Card, Row, Carousel } from 'antd';
+
+import shoes from './Img/프레드페리.PNG'
+import pros from './Img/pros.PNG'
+import shoes3 from './Img/shoes3.PNG'
 import './Menu.scss'
 
 const { Meta } = Card;
@@ -12,11 +16,11 @@ function ShoesCategory() {
     const [Products, setProducts] = useState([])
     const [Skip, setSkip] = useState(0)
     const [PostSize, setPostSize] = useState(0)
-    
+
     useEffect(() => {
-        
+
         let body = {
-            skip : Skip,
+            skip: Skip,
         }
 
         getProducts(body)
@@ -27,11 +31,11 @@ function ShoesCategory() {
 
         axios.post('/api/product/products', body)
             .then(response => {
-                if(response.data.success) {
-                    if(body.loadMore) {
+                if (response.data.success) {
+                    if (body.loadMore) {
                         setProducts([...Products, ...response.data.productInfo])
                     } else {
-                        setProducts(response.data.productInfo.sort((a,b) => b.sold - a.sold))
+                        setProducts(response.data.productInfo.sort((a, b) => b.sold - a.sold))
                     }
                     setPostSize(response.data.postSize)
                 } else {
@@ -42,60 +46,82 @@ function ShoesCategory() {
     }
 
     const renderCards = Products.map((product, index) => {
-        if(product.continents === 6) {
-            return  <Col lg={6} md={8} xs={12}>
-                        <Card 
-                                style ={{width:'280px', height: '350px'}}
-                                hoverable={true}
-                                cover={<a href={`/product/${product._id}`} > <MenuCardImage images={product.images} /></a>}
-                                >
-                            <Meta
-                                title={product.title}
-                                description={`${product.price}원`}
-                            />
-                        </Card>
-                    </Col>
+        if (product.continents === 6) {
+            return <Col lg={6} md={8} xs={12}>
+                <Card
+                    style={{ width: '250px', height: '350px' }}
+                    hoverable={true}
+                    cover={<a href={`/product/${product._id}`} > <MenuCardImage images={product.images} /></a>}
+                >
+                    <Meta
+                        title={product.title}
+                        description={`${product.price}원`}
+                    />
+                </Card>
+            </Col>
         }
-        
+
     })
 
     function handleChange(value) {
         switch (`${value}`) {
             case "Best":
-                setProducts([...Products.sort((a,b) => b.sold - a.sold)])
+                setProducts([...Products.sort((a, b) => b.sold - a.sold)])
                 break;
             case "New":
                 setProducts([...Products.sort((a, b) => b.createdAt.localeCompare(a.createdAt))])
                 break;
             case "LowPrice":
-                setProducts([...Products.sort((a,b) => a.price - b.price)])            
+                setProducts([...Products.sort((a, b) => a.price - b.price)])
                 break;
             case "HighPrice":
-                setProducts([...Products.sort((a,b) => b.price - a.price)])
+                setProducts([...Products.sort((a, b) => b.price - a.price)])
                 break;
-        
+
             default:
                 break;
         }
     }
 
-    
+
 
 
     return (
         <article className="store-page page">
             <div className="category-container best-category clearfix">
-                <div className="category-goods-label">
-                    <p className="all-goods-in-category">전체보기</p>    
-                </div>
+                <Carousel autoplay effect="fade">
+                    <div className="category-goods-label">
+                        <div overflow="hidden" width="100%">
+                            <a href="https://www.styleshare.kr/catalogs/14427">
+                                <img className="ban_img"
+                                    src={shoes} alt="img" />
+
+                            </a>
+                            </div>
+                    </div>
+                     
+                    <a href="https://www.styleshare.kr/catalogs/14427">
+                        <img className="ban_img"
+                            src={pros} alt="img" />
+
+                    </a>
+                    <a href="https://www.styleshare.kr/catalogs/14462">
+                        <img className="ban_img"
+                            src={shoes3} alt="img" />
+
+                    </a>
+                    
+                </Carousel>
+               
+                <p className="all goods-in-category">전체보기</p>
                 <div className="sort-filter clearfix">
                     <div className="dropdown basic-select">
-                    <Select defaultValue="Best" style={{ width: 120 }} onChange={handleChange} bordered={false}>
-                        <Option value="Best">인기순</Option>
-                        <Option value="New">최신순</Option>
-                        <Option value="LowPrice">낮은가격순</Option>
-                        <Option value="HighPrice">높은가격순</Option>
-                    </Select>
+                        <Select defaultValue="Best" style={{ width: 120 }} onChange={handleChange} bordered={false}>
+                            <Option value="Best">인기순</Option>
+                            <Option value="New">최신순</Option>
+                            <Option value="LowPrice">낮은가격순</Option>
+                            <Option value="HighPrice">높은가격순</Option>
+                        </Select>
                     </div>
                 </div>
                 <div className="goods-card-container">
@@ -105,6 +131,8 @@ function ShoesCategory() {
                         </Row>
                     </div>
                 </div>
+
+
             </div>
         </article>
     )

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function SNS_NavBar() {
 	return (
 		<div className="sns_navbar">
-			<h1>
+			<p>
 				<Link to="/sns/BoardPage" style={{ color: 'inherit' }}>
 					게시판&nbsp;&nbsp;
 				</Link>
@@ -18,7 +18,7 @@ function SNS_NavBar() {
 				<Link to="/sns/QnaPage" style={{ color: 'inherit' }}>
 					QnA
 				</Link>
-			</h1>
+			</p>
 		</div>
 	);
 }

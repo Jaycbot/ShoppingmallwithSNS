@@ -51,7 +51,8 @@
 }
 
 .category-container .category-goods-label .all-goods-in-category {
-    font-size: 18px;
+    font-size: 25px;
+    font-style: inherit;
 }
 .category-container .category-goods-label .all-goods-in-category {
     margin-top: 36px;
@@ -59,7 +60,12 @@
     color: #26282B;
     font-weight: bold;
 }
-
+.ban_div {
+    position: absolute; 
+    max-width: 300px; 
+    bottom: 15rem; 
+    margin-left: 15rem;
+}
 p {
     display: block;
     margin-block-start: 1em;
@@ -180,4 +186,57 @@ embed, img, object {
 
 .goods-card .goods-link {
     text-decoration: none;
+}
+.ban_scroll_circle {
+    box-sizing: border-box;
+    height: 64px;
+    width: 64px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border-width: 1px;
+    border-style: solid;
+    border-image: initial;
+    border-color: rgb(27, 29, 31);
+    border-radius: 100%;
+}
+
+.ban_button{
+    position: absolute;
+    bottom: -78px;
+    left: calc(50% - 32px);
+    background-color: transparent;
+    cursor: pointer;
+    user-select: none; 
+    margin: 0px;
+    padding: 0px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    @media screen and (max-width: 64em) {
+        display: none;
+    }
+}
+
+
+.ban_scroll_text{
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 0.25s ease-in-out 0s;
+}
+
+.ban_img {
+    background:
+        linear-gradient(to bottom, rgba(0,0,0,0)
+                            39%,rgba(0,0,0,0)
+                            41%,rgba(0,0,0,0.65)
+                            100%);
+        height: 900px;
+        background-size: 100%, cover;
+        background-position: center, center;
+        width: 100%;
+        position: relative;
 }
