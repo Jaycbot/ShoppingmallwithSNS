@@ -127,13 +127,14 @@ function CartPage(props) {
                     />
 
                 }
+                </div>
 
-                {ShowTotal &&
+                <div className="request_pay">
+                    {ShowTotal &&
                     <RequestPay
-
                         total={Total}
                         onSuccess={transactionSuccess} />}
-            </div>
+                </div>
         </div>
     )
 }

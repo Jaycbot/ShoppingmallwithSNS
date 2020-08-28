@@ -56,7 +56,7 @@ class RegisterRight extends Component {
 		  if(res.data.success){
 			  alert('회원가입에 성공하셨습니다')
 			  this.props.history.push('/login');
-		  } else{
+		  } else {
 			  alert('회원가입에 실패했습니다.')
 		  }
 	  })

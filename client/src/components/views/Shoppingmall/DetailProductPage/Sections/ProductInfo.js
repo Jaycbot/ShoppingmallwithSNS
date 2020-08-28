@@ -1,7 +1,7 @@
 import React from 'react'
 import {  Descriptions, Row } from 'antd'
 import { useDispatch } from 'react-redux'
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { addToCart } from '../../../../../_actions/user_action'
 import './ProductInfo.scss' 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './RequestPay.scss'
 
 class RequestPay extends React.Component {
   requestPay = () => {
@@ -11,9 +11,9 @@ class RequestPay extends React.Component {
       pay_method: "card",
       merchant_uid: "ORD20180131-0000011",
       name: "Style Share",
-      amount: 1,
-      buyer_email: "gildong@gmail.com",
-      buyer_name: "홍길동",
+      amount: 4,
+      buyer_email: "",
+      buyer_name: "",
       buyer_tel: "010-4242-4242",
       buyer_addr: "서울특별시 서초구",
       buyer_postcode: "01181"
@@ -25,19 +25,28 @@ class RequestPay extends React.Component {
         msg += '결제 금액 : ' + rsp.paid_amount;
         msg += '카드 승인번호 : ' + rsp.apply_num;
         // 결제 성공 시 로직,
-
+        console.log("결제 성공");
       } else {
         var msg = '결제에 실패하였습니다.';
         msg += '에러내용 : ' + rsp.error_msg;
         // 결제 실패 시 로직,
-
+        console.log("결제 실패");
       }
     });
   }
 
   render() {
     return (
-      <button onClick={this.requestPay}>일반결제</button>
+      <div className="pay_button_parent">
+      <div className="pay_get_cart_box">
+      <button 
+      onClick={this.requestPay}
+      className="pay_get_cart_button" 
+      >
+        결제하기
+       </button>
+       </div>
+       </div>
     );
   }
 }
