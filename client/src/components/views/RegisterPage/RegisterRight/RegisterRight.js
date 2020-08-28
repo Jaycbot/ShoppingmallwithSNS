@@ -5,7 +5,6 @@ import KaKaoLogin from "react-kakao-login"
 import styled from 'styled-components';
 import kakaoImg from '../../../Img/kakao_login.png'
 import "./RegisterRight.scss";
-
 class RegisterRight extends Component {
   constructor(props) {
     super(props);
@@ -21,8 +20,6 @@ class RegisterRight extends Component {
         provider: "",
         nickname: "",
         logged: false,
-        
-              
   }
     };
     componentDidMount = () => {
@@ -31,16 +28,13 @@ class RegisterRight extends Component {
         this.onLogin();
       } 
         this.googleSDK();
-        
     };
-    
     //카카오 로그인
     onLogin = () => {
       this.setState({
         logged: true
       });
     }
-       
     responseKakao = (res) => {
       this.setState({
       id: res.profile.id,
@@ -56,29 +50,23 @@ class RegisterRight extends Component {
 		  if(res.data.success){
 			  alert('회원가입에 성공하셨습니다')
 			  this.props.history.push('/login');
-		  } else {
+		  } else{
 			  alert('회원가입에 실패했습니다.')
 		  }
 	  })
        }
-      
       // Login Fail
       responseFail = (err) => {
       console.error(err);
        }
       doSignUp = () => {
-		
       const { id, name, provider } = this.state;
       window.sessionStorage.setItem('id', id);
       window.sessionStorage.setItem('name', name);
       window.sessionStorage.setItem('provider', provider);
-     
       //this.props.onLogin();
       //this.props.history.push('/');
-		
       }
-      
-    
     googleSDK = () => {
         // 구글 SDK 초기 설정
         window["googleSDKLoaded"] = () => {
@@ -91,7 +79,6 @@ class RegisterRight extends Component {
             this.loginWithGoogle();
           });
         };
-    
         (function(d, s, id) {
           var js,
             fjs = d.getElementsByTagName(s)[0];
@@ -104,15 +91,12 @@ class RegisterRight extends Component {
           fjs.parentNode.insertBefore(js, fjs);
         })(document, "script", "google-jssdk");
       };
-    
       //구글 로그인
       loginWithGoogle = () => {
-       
         this.auth2.attachClickHandler(
           this.refs.googleLoginBtn,
           {},
           googleUser => {
-          
             let profile = googleUser.getBasicProfile();
             let temp = {
               id: profile.getEmail(),
@@ -131,7 +115,6 @@ class RegisterRight extends Component {
           }
         );
       };
-    
     render() {
         return (
             <div className="login_main_right">
@@ -155,32 +138,26 @@ class RegisterRight extends Component {
               <div type="sumit" style={{ border: "none", color: "gray" }}>
                 <span>Google 로그인</span>
               </div>
-
             </button>
           </li>
           <li>
-            
           <KaKaoBtn
 						jsKey={'45e2102eb546d447d24bc19db598acb3'}
 						onSuccess={this.responseKakao}
 						onFailure={this.responseFail}
 						getProfile="true"
-						
 					>
             <img
             alt="kakao"
             src={kakaoImg}
             />
           </KaKaoBtn>
-          
           </li>
-
         </ul>
       </div>
     );
   }
 }
-
 const KaKaoBtn = styled(KaKaoLogin)`
   padding: 0;
   width: 300px;
@@ -198,5 +175,4 @@ const KaKaoBtn = styled(KaKaoLogin)`
     box-shadow: 0 0px 15px 0 rgba(0, 0, 0, 0.2);
   }
 `;
-
 export default withRouter(RegisterRight);
