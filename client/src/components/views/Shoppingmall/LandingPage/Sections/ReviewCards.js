@@ -47,7 +47,11 @@ function ReviewCards() {
 			if (post && post.writer) {
 				// 수정한 내용 원래는 없음
 				return (
-					<Col key={post._id} lg={6} xs={24}>
+					<Col key={post._id} lg={6} md={8} xs={24}
+					style={{
+						display : 'flex',
+						justifyContent : 'center'
+					}}>
 						<Card
 							style={{
 								width: 250,

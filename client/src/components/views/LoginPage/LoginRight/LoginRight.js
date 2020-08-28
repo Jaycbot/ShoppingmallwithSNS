@@ -69,7 +69,7 @@ class LoginRight extends Component {
       window.sessionStorage.setItem('id', id);
       window.sessionStorage.setItem('name', name);
       window.sessionStorage.setItem('provider', provider);
-      console.log(id, name, provider)
+      
       //this.props.onLogin();
       //this.props.history.push('/');
        
@@ -107,13 +107,20 @@ class LoginRight extends Component {
           this.refs.googleLoginBtn,
           {},
           googleUser => {
-            let profile = googleUser.getBasicProfile();
-            console.log("Token || " + googleUser.getAuthResponse().id_token);
-            console.log("ID: " + profile.getId());
-            console.log("Name: " + profile.getName());
-            console.log("Image URL: " + profile.getImageUrl());
-            console.log("Email: " + profile.getEmail());
-            console.log("total", googleUser.getAuthResponse());
+            let profile_temp = googleUser.getBasicProfile();
+            let variable = {
+              profile: {
+                 id: profile_temp.getEmail(),
+              }
+            }
+
+            axios.post('/api/users/login', variable).then(res => {
+              if(res.data.loginSuccess){
+               this.props.history.push('/');
+              } else{
+                alert('로그인에 실패했습니다.')
+              }
+            })
             
           },
           error => {

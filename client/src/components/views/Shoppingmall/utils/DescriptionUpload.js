@@ -41,7 +41,7 @@ function DescriptionUpload(props) {
 
     return (
         <div style={{ display: 'flex' , justifyContent: 'space-between' }}>
-            <Dropzone onDrop={dropHandler}>
+            <Dropzone onDrop={dropHandler}> +
                 {({getRootProps, getInputProps}) => (
                     <section>
                     <div 

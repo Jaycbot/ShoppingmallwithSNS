@@ -98,7 +98,7 @@ function SellerInfo() {
 
 
     return (
-        <div style={{width: 800}}>
+        <div>
             <h1>SELLER LIST</h1>
                 <div style={{display: 'flex', justifyContent: 'flex-end', margin: '1rem auto'}}>
                     <SearchFeature 

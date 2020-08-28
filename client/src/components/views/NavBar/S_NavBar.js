@@ -6,8 +6,8 @@ import './S_NavBar.scss';
 
 function S_NavBar(props) {
 	const NavBarS = () => {
-		if (props.history.location.pathname.substring(0, 4) === '/sns') {
-			return <Sns_NavBar />;
+		if (props.history.location.pathname.substring(0, 8) === '/product') {
+			return <Store_NavBar />;
 		} else {
 			return;
 		}
@@ -23,7 +23,7 @@ function S_NavBar(props) {
 
 	return (
 		<div className="s_nav_container">
-			{/* <div className="s_nav_1">{NavBarS()}</div> */}
+			<div className="s_nav_1">{NavBarS()}</div>
 			<div className="s_nav_2">{NavBarSS()}</div>
 		</div>
 	);

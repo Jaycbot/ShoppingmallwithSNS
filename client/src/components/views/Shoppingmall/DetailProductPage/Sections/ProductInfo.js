@@ -45,8 +45,7 @@ function ProductInfo(props) {
                       </div>               
                 
                 <br />
-            </div>
- 
+            </div> 
         </div>
     )
 }

@@ -12,7 +12,7 @@ import S_NavBar from '../components/views/NavBar/S_NavBar';
 import Shop_Landingpage from './views/Shoppingmall/LandingPage/Shop_Landingpage';
 import Shop_EventPages from './views/Shoppingmall/EventPage/EventPages';
 import UploadProductPage from './views/Shoppingmall/UploadProductPage/UploadProductPage';
-import DetailPage from './views/Shoppingmall/DetailProductPage/DetailProductPage';
+import DetailProductPage from './views/Shoppingmall/DetailProductPage/DetailProductPage';
 import CartPage from './views/Shoppingmall/CartPage/CartPage';
 import BestItem from './views/Shoppingmall/MenuPage/BestItem';
 import TopCategory from './views/Shoppingmall/MenuPage/TopCategory';
@@ -24,7 +24,6 @@ import ShoesCategory from './views/Shoppingmall/MenuPage/ShoesCategory';
 import HistoryPage from './views/Shoppingmall/HistoryPage/HistoryPage';
 import SellerPage from './views/SellerPage/SellerPage';
 import SellerProducts from './views/Admin/SellerProducts';
-import adUserPage from './views/Admin/UserPage';
 import SNSList from './views/Admin/SNSList';
 import DashBoard from './views/Admin/DashBoard';
 import SearchPage from './views/NavBar/SearchBar/SearchPage';
@@ -47,11 +46,7 @@ function App() {
 					<Route exact path="/update" component={Auth(UpdateProfile, true)} />
 					
 					
-					
 					<Route exact path="/edit/:info" component={Auth(EditPostPage, true)} />
-					
-					
-					
 					
 					
 					<Route
@@ -89,7 +84,7 @@ function App() {
 					<Route
 						exact
 						path="/product/:productId"
-						component={Auth(DetailPage, null)}
+						component={Auth(DetailProductPage, null)}
 					/>
 					<Route exact path="/user/cart/cartpage" component={Auth(CartPage, true)} />
 					<Route

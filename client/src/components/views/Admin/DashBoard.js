@@ -46,16 +46,17 @@ function DashBoard() {
                 <Content style={{ margin: '0 16px' }}>
                     <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
                       <DashBordIcon />
-                    
-                      <br/><br/><br/>
-                      <DashBoardGraph />
                       <br/><br/><br/>
                       
                       <Row justify="space-around">
-                        <SellerInfo />
+                        <DashBoardGraph />
                         <br/><br/><br/>
                         <UserRatio />
                       </Row>
+                      
+                      <SellerInfo />
+                      <br/><br/><br/>
+                      
                     </div>
                 </Content>
                 </Layout>
