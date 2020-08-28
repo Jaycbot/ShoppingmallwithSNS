@@ -55,41 +55,6 @@
   margin: 24px 0 0 0;
 }
 
-.buy_box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.buy_button {
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  box-sizing: border-box;
-  cursor: pointer;
-  -webkit-box-pack: center;
-  justify-content: center;
-  user-select: none;
-  height: 2.75rem;
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.31;
-  letter-spacing: -0.025rem;
-  color: #00c1a3;
-  background-color: white;
-  width: 100%;
-  display: flex;
-  border-radius: 9999px;
-  outline: none;
-  text-decoration: none;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #00d0b1;
-  border-image: initial;
-  padding: 0px 1.25rem;
-  height: 56px;
-}
-
 .buy_button:hover {
   border-color: #00d0b1;
   background-color: #00d0b1;

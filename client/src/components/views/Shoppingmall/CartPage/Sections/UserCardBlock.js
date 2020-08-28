@@ -8,7 +8,7 @@ function UserCardBlock(props) {
 			return `${RoutingVariable}${image}`;
 		}
 	};
-
+  
 	const renderItems = () =>
 		props.products &&
 		props.products.map((product, index) => (
