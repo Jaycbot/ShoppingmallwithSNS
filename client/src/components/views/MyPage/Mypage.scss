@@ -38,10 +38,12 @@
 		.userInfo {
 			display: inline-block;
 			margin-left: 1rem;
+			
 		}
 		.update_info {
 			float: right;
 			button {
+				cursor: pointer;
 				box-sizing: border-box;
 				color: #ffffff;
 				min-width: 70px;
@@ -52,7 +54,6 @@
 				margin-right: 30px;
 				font-size: 16px;
 				font-weight: 700;
-				cursor: pointer;
 			}
 		}
 	}

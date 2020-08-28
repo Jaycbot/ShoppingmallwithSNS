@@ -2,7 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react';
 import Dropzone from 'react-dropzone';
 import { PlusOutlined } from '@ant-design/icons';
 import axios from 'axios';
-
+import { RoutingVariable } from '../../../Config';
 const UploadImage = (props) => {
 	const [Images, setImages] = useState([]);
 
@@ -68,7 +68,7 @@ const UploadImage = (props) => {
 					<div onClick={() => deleteHandler(image)} key={index}>
 						<img
 							style={{ minWidth: '300px', width: '300px', height: '240px' }}
-							src={`http://localhost:5000/${image}`}
+							src={`${RoutingVariable}${image}`}
 							alt="업로드이미지"
 						/>
 					</div>

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import MenuCardImage from './MenuCardImage';
-import { Select, Col, Card, Row } from 'antd';
+import { Select, Col, Card, Row, Carousel } from 'antd';
+import pants from './Img/pants.PNG'
 import './Menu.scss'
 
 const { Meta } = Card;
@@ -84,30 +85,46 @@ function PantsCategory() {
 
     return (
         <article className="store-page page">
-            <div className="category-container best-category clearfix">
+        <div className="category-container best-category clearfix">
+            <Carousel autoplay effect="fade">
                 <div className="category-goods-label">
-                    <p className="all-goods-in-category">전체보기</p>    
+                    <div overflow="hidden" width="100%">
+                        <a href="https://www.styleshare.kr/catalogs/14446">
+                            <img className="ban_img"
+                                src={pants} alt="img" />
+
+                        </a>
+                        </div>
                 </div>
-                <div className="sort-filter clearfix">
-                    <div className="dropdown basic-select">
+                 
+              
+                
+            </Carousel>
+
+            <p className="all-goods-in-category">전체보기</p>
+            <div className="sort-filter clearfix">
+                <div className="dropdown basic-select">
                     <Select defaultValue="Best" style={{ width: 120 }} onChange={handleChange} bordered={false}>
                         <Option value="Best">인기순</Option>
                         <Option value="New">최신순</Option>
                         <Option value="LowPrice">낮은가격순</Option>
                         <Option value="HighPrice">높은가격순</Option>
                     </Select>
-                    </div>
-                </div>
-                <div className="goods-card-container">
-                    <div className="inner-wrapper clearfix">
-                        <Row gutter={[16, 16]}>
-                            {renderCards}
-                        </Row>
-                    </div>
                 </div>
             </div>
-        </article>
-    )
+            <div className="goods-card-container">
+                <div className="inner-wrapper clearfix">
+                    <Row gutter={[16, 16]}>
+                        {renderCards}
+                    </Row>
+                </div>
+            </div>
+
+
+        </div>
+    </article>
+)
 }
+
 
 export default PantsCategory

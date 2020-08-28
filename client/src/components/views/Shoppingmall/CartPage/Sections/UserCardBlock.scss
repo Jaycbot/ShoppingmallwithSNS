@@ -1,16 +1,28 @@
+
+.table_wrapper {
+    flex-basis: 50%;
+    padding-right: 20px;
+    
 table {
+    display: inline-block;
+    border-right: 1px dotted rgb(201, 205, 210);
+    position: relative;
     font-family: Arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    
 }
 
+
 td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
+    
+    border: 2px solid #dddddd;
+    text-align: center;
     padding: 8px;
 }
 
 tr:nth-child(even) {
+    
     background-color: #dddddd;
 }
 
@@ -27,6 +39,7 @@ tr:nth-child(even) {
 }
 
 .CartGoodsDesktop__goods-info-name {
+    
     cursor: pointer;
     font-size: 14px;
     font-weight: bold;
@@ -38,3 +51,6 @@ tr:nth-child(even) {
     margin-bottom: 10px;
     word-break: break-all;
 }
+
+}
+  

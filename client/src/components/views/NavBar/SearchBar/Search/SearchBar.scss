@@ -1,0 +1,27 @@
+.Search_Bar {
+  position: relative;
+
+  .Search_Bar_wrapper {
+    display: flex;
+    align-items: center;
+    height: 64px;
+
+    .Search_Bar_search {
+      position: relative;
+      
+
+      .Search_Bar_text {
+      
+        background-color: white;
+        border-radius: 22px;
+        border-width: 1px;
+        border: 1px solid rgb(182, 182, 182);
+        width: 180px;
+        height: 40px;
+        padding: 10px 12px 10px 36px;
+        font-size: 30px;
+              
+      }
+    }
+  }
+}

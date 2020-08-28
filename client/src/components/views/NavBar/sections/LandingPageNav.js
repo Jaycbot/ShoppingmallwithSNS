@@ -1,19 +1,25 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import './LandingPageNav.scss';
+import SSS from '../../../Img/SSS.PNG';
 function LandingPageNav() {
 	return (
 		<div className="landingPage_nav">
-			<h1>
+			<Link to="/">
+				<img src={SSS} alt="img"></img>
+			</Link>
+
+			<p>
 				<Link to="/sns" style={{ color: 'inherit' }}>
 					#SNS
 				</Link>
-			</h1>
-			<h1>
+			</p>
+
+			<p>
 				<Link to="/shoppingmall" style={{ color: 'inherit' }}>
-					#STORE
+					STORE
 				</Link>
-			</h1>
+			</p>
 		</div>
 	);
 }

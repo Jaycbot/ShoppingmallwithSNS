@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Collapse } from 'antd';
+import {RoutingVariable} from '../../../../Config'
 import './ProductDescribe.scss' 
  
 const { Panel } = Collapse;
@@ -15,8 +16,7 @@ function ProductDescribe(props) {
 
     }, [props.detail])
 
-    console.log(PostSize);
-
+   
     return ( 
         <div className="Box-fzpncP iIZfvh">
             <div className="Box-fzpncP cFlNGk">
@@ -25,7 +25,7 @@ function ProductDescribe(props) {
                 <p><br/><br/>
                     <picture>
                         {Images && Images.map((images)=> (
-                            <img src={`http://localhost:5000/${images}`}/>
+                            <img src={`${RoutingVariable}${images}`}/>
                         ))}
                     </picture>
                 </p>

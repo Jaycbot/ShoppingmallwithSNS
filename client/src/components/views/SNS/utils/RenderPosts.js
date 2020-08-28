@@ -4,12 +4,14 @@ import RenderImages from './Sns_RenderImages';
 import RenderText from './RenderText';
 import Comment from './Comment';
 import LikeDislikes from './LikeDislikes'
+import { RoutingVariable } from '../../../Config';
+
 
 const { Meta } = Card;
 function RenderPosts(props) {
 	const renderProfileImage = (post) => {
 		if (post && post.writer.image) {
-			return `http://localhost:5000/${post.writer.image}`;
+			return `${RoutingVariable}${post.writer.image}`;
 		} else {
 			return 'https://thumbs.dreamstime.com/b/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg';
 		}
@@ -33,12 +35,10 @@ function RenderPosts(props) {
 									<Meta
 										avatar={<Avatar src={renderProfileImage(post)} />}
 										description={<RenderText post={post} />}
-										
 									/>
 									<div style={{display : 'flex' , justifyContent : 'space-around'}}>
-										{/* <br/> */}
 									<Comment post={post} />
-									<LikeDislikes post={post}/>
+									<LikeDislikes post={post}/>																			
 									</div>
 								</Card>
 							</Col>
