@@ -153,11 +153,12 @@ router.post('/sellerProducts', (req, res) => {
 router.get('/products_by_id', (req, res) => {
 	let type = req.query.type;
 	let productIds = req.query.id;
-
+	
 	if (type === 'array') {
 		// id =1231231231, 1231244231,2131231231 이거를
 		// productId = ['1231231231', '1231244231', '2131231231'] 이런식으로 바꿔주기
 		let ids = req.query.id.split(',');
+		
 		productIds = [];
 		productIds = ids.map((item) => {
 			return item;

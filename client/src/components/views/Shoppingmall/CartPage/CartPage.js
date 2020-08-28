@@ -14,7 +14,7 @@ function CartPage(props) {
     const [Total, setTotal] = useState(0)
     const [ShowTotal, setShowTotal] = useState(false)
     const [ShowSuccess, setShowSuccess] = useState(false)
-
+    
     useEffect(() => {
 
         let cartItems = []
@@ -89,10 +89,10 @@ function CartPage(props) {
                     </div>
                 </header>
                 <div>
-                    <UserCardBlock
+                    {(user&& user.cartDetail)&&<UserCardBlock
                         products={user.cartDetail}
                         removeItem={removeFromCart}
-                    />
+                    />}
                 </div>
             </div>
             {ShowTotal ?

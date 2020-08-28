@@ -1,9 +1,10 @@
 import React from 'react'
-import { Button, Descriptions, Row } from 'antd'
+import {  Descriptions, Row } from 'antd'
 import { useDispatch } from 'react-redux'
+import { Link } from "react-router-dom";
 import { addToCart } from '../../../../../_actions/user_action'
 import './ProductInfo.scss' 
-import Paypal from '../../utils/Paypal'
+
 
 function ProductInfo(props) {
 
@@ -29,16 +30,19 @@ function ProductInfo(props) {
                 <br />
                 <br />
                 <br />
-                    <div style={{ display: 'flex', justifyContent: 'center'}}>
-                        <Button size="large" shape="round" type="danger" onClick={clickHandler}>
-                            장바구니담기
-                        </Button>
-                    </div>
-                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '30px'}}>
-                        <Paypal 
-                            total = {props.detail.price}
-                        />
-                    </div>
+                <div className="buy_button_parent">
+                    <div className="get_cart_box">
+                        
+                        <button 
+                        onClick={clickHandler} 
+                        className="get_cart_button" 
+                        
+                         >
+                            장바구니 담기
+                          </button>
+                          
+                        </div>
+                      </div>               
                 
                 <br />
             </div>
