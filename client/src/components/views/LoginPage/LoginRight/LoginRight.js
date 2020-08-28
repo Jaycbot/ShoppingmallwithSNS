@@ -50,7 +50,7 @@ class LoginRight extends Component {
 	  this.doSignUp();
 	//   res.profile loginSuccess
 	 
-	 axios.post('/api/users/login', res.profile).then(res => {
+	 axios.post('/api/users/login', res).then(res => {
 		 if(res.data.loginSuccess){
 			this.props.history.push('/');
 		 } else{

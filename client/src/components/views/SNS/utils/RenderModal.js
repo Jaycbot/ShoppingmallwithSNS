@@ -34,6 +34,7 @@ function RenderModal(props) {
 		Modal.setAppElement('#root');
 	}, []);
 
+
 	const handleCancel = () => {
 		props.setVisible(false);
 	};
@@ -45,7 +46,6 @@ function RenderModal(props) {
 			thumbnail: `${RoutingVariable}${snapshot}`,
 		});
 	});
-
 	const removeItem = (snsId) => {
 		const data = {
 			id: snsId,

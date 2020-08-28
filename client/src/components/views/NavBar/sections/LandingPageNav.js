@@ -11,7 +11,7 @@ function LandingPageNav() {
 
 			<p>
 				<Link to="/sns" style={{ color: 'inherit' }}>
-					#OOTD
+					#SNS
 				</Link>
 			</p>
 
