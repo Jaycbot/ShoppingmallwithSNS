@@ -6,8 +6,6 @@ import FileUpload from '../utils/FileUpload'
 import DescriptionUpload from '../utils/DescriptionUpload'
 import Axios from 'axios';
 
-const { TextArea } = Input;
-
 const Continents = [
     {key: 1, value:"아우터"},
     {key: 2, value:"상의"},
