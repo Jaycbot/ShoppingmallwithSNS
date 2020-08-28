@@ -1,0 +1,31 @@
+.login_main_right {
+  flex-basis: 50%;
+  padding-left: 20px;
+}
+.login_main_right ul {
+  margin: 0;
+  list-style: none;
+}
+.login_main_right ul li {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.login_main_right ul li button {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 4px 0px;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1;
+  color: white;
+}
+.login_main_right ul li button:hover {
+  box-shadow: 0 0px 15px 0 rgba(0, 0, 0, 0.2);
+}
+.login_main_right ul li button div {
+  border-left: 1px;
+  width: 100%;
+  padding: 14px 0px;
+}
