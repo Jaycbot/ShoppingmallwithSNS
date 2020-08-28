@@ -274,23 +274,7 @@ router.post('/admin', (req, res) => {
 			res.status(200).json({ success: true, users });
 		});
 	}
-<<<<<<< HEAD
-});  
-
-
-router.post('/payment', (req, res) => {
-
-		Payment.find({})
-			.sort({ createdAt : -1 })
-			.exec((err, pays) => {
-				if (err) return res.status(400).send("Payment 전체 조회 실패.");
-				res.status(200).json({ success : true, pays});
-			})
-
-});  
-=======
 });
->>>>>>> 29ea9e2e40e21b866cc471da8897cda07a2f038e
 
 router.post('/uploadImages', upload.single('files'), (req, res) => {
 	res.status(200).json({ success: true, filePath: req.file.path });
