@@ -37,8 +37,8 @@ function RenderPosts(props) {
 										description={<RenderText post={post} />}
 									/>
 									<div style={{display : 'flex' , justifyContent : 'space-around'}}>
-									<Comment post={post} />
 									<LikeDislikes post={post}/>																			
+									<Comment post={post} />
 									</div>
 								</Card>
 							</Col>

@@ -14,9 +14,10 @@ function Comment(props) {
 		});
 	}, []);
 
-	return <div><MessageOutlined style={{ fontSize: '20px' }} />
-	&nbsp;&nbsp;{comments.length}
-	</div>;
+	return <div>
+		<MessageOutlined style={{ fontSize: '20px' }} />
+			&nbsp;&nbsp;{comments.length}
+		</div>;
 }
 
 export default Comment;

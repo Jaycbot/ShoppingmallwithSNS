@@ -145,6 +145,7 @@ function RenderDescription(props) {
 				<div
 					className="post_text"
 					dangerouslySetInnerHTML={renderText(props.post.text)}
+					style={{marginBottom: '10px'}}
 					>
 				</div>
 				{/* <div className="post_user_info">{renderPostUser()}</div> */}
@@ -156,7 +157,7 @@ function RenderDescription(props) {
 
 
 
-			<div className="comments">
+			<div className="comments" style={{marginTop: '15px'}}>
 				<div className="comments_input">
 					<div className="comments_from_user">{commentsRender()}</div>
 				</div>

@@ -3,7 +3,6 @@ import axios from 'axios'
 import {Card, Row} from 'antd'
 import ImageSlider from '../utils/ImageSlider';
 import './EventPages.scss'
-import { FileExcelFilled } from '@ant-design/icons';
 
 const {Meta} = Card
 

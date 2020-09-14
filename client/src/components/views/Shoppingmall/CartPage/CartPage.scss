@@ -1,35 +1,11 @@
-.cart_wrapper {
-    width: 100%;
-    height: 100%;
-    margin: 10px;
-
-    header {
-        .cart_page {
-            width: 240px;
-            height: 120px;
-            margin: left;
-        }
-        p {
-            margin-top: 1px;
-            color: rgb(114, 120, 127);
-            font-size: 42px;
-        }
-    }
-    .pay_won {
-        width: 100%;
-        height: 100%;
-        margin: 70px;
-    }
+.paypal {
+    display: flex; 
+    justify-content: flex-end; 
+    margin-top: 0.5rem;
 }
 
-.pay {
-    width: 100%;
-    height: 100%;
-    margin: 70px;
-}
 .request_pay {
-    font-size: 30px;
-    width: 100%;
-    height: 100%;
-    margin: 70px;
+    display: flex; 
+    justify-content: flex-end; 
+    margin-top: 3rem;
 }
