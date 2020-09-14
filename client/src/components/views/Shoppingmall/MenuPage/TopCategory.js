@@ -5,6 +5,7 @@ import { Select, Col, Card, Row, Carousel } from 'antd';
 import top from './Img/top.PNG'
 import top2 from './Img/top2.PNG'
 import top3 from './Img/top3.PNG'
+import top4 from './Img/top4.PNG'
 import './Menu.scss'
 
 const { Meta } = Card;
@@ -101,6 +102,9 @@ function TopCategory() {
 
                     <img className="ban_menuimg"
                         src={top3} alt="img" />
+
+                    <img className="ban_menuimg"
+                        src={top4} alt="img" />
                 
             </Carousel>
 

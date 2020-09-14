@@ -4,6 +4,7 @@ import MenuCardImage from './MenuCardImage';
 import { Select, Col, Card, Row, Carousel } from 'antd';
 import outer from './Img/outer.PNG'
 import outer2 from './Img/outer2.PNG'
+import outer3 from './Img/outer3.PNG'
 import './Menu.scss'
 
 const { Meta } = Card;
@@ -90,12 +91,15 @@ function OuterCategory() {
                     <div className="category-goods-label">
                         <div overflow="hidden" width="100%">
                                 <img className="ban_menuimg"
-                                    src={outer} alt="img"/>
+                                    src={outer3} alt="img"/>
                             </div>
                     </div>
                      
                         <img className="ban_menuimg"
                             src={outer2} alt="img" />
+                            
+                        <img className="ban_menuimg"
+                            src={outer} alt="img" />
                                        
                 </Carousel>
 
