@@ -1,18 +1,20 @@
 .Store_navbar{
+    margin-top: 10px;
     width: 100%;
     display: flex;
     justify-content: center;
     p {
-        font-size: 25px;
+        font-size: 20px;
         color: #1b1d1f;
 		margin-left: 1em;
 		font-weight: bold;
 		display: flex;
-		justify-content: center;
+        justify-content: center;
+        font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
     }
 }
 
-
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
 
 .menu__mobile-button{
     float: right;

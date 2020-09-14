@@ -274,7 +274,6 @@ router.post('/admin', (req, res) => {
 			res.status(200).json({ success: true, users });
 		});
 	}
-<<<<<<< HEAD
 });  
 
 
@@ -288,9 +287,6 @@ router.post('/payment', (req, res) => {
 			})
 
 });  
-=======
-});
->>>>>>> 29ea9e2e40e21b866cc471da8897cda07a2f038e
 
 router.post('/uploadImages', upload.single('files'), (req, res) => {
 	res.status(200).json({ success: true, filePath: req.file.path });

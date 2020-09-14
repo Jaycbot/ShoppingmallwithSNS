@@ -40,7 +40,7 @@ function HotCards() {
 
         return (
             <Card 
-                style ={{width:'280px', height: '400px' , marginRight: '10px', marginBottom : '20px'}}
+                style ={{width:'280px', height: '420px' , marginRight: '10px', marginBottom : '20px'}}
                 hoverable={true}
                 cover={<a href={`/product/${product._id}`} > <ImageSlider images={product.images} /></a>}
             >
@@ -57,7 +57,7 @@ function HotCards() {
 
             return (
                 <Card 
-                    style ={{width:'280px', height: '400px', marginRight: '10px', marginBottom : '20px'}}
+                    style ={{width:'280px', height: '420px', marginRight: '10px', marginBottom : '20px'}}
                     hoverable={true}
                     cover={<a href={`/product/${product._id}`} > <ImageSlider images={product.images} /></a>}
                 >
@@ -74,7 +74,7 @@ function HotCards() {
         if(product.continents === 2) {
             return (
                 <Card 
-                    style ={{width:'280px', height: '400px', marginRight: '10px', marginBottom : '20px'}}
+                    style ={{width:'280px', height: '420px', marginRight: '10px', marginBottom : '20px'}}
                     hoverable={true}
                     cover={<a href={`/product/${product._id}`} > <ImageSlider images={product.images} /></a>}
                 >
@@ -91,7 +91,7 @@ function HotCards() {
         if(product.continents === 3) {
             return (
                 <Card 
-                    style ={{width:'280px', height: '400px', marginRight: '10px', marginBottom : '20px'}}
+                    style ={{width:'280px', height: '420px', marginRight: '10px', marginBottom : '20px'}}
                     hoverable={true}
                     cover={<a href={`/product/${product._id}`} > <ImageSlider images={product.images} /></a>}
                 >
@@ -108,7 +108,7 @@ function HotCards() {
         if(product.continents === 4) {
             return (
                 <Card 
-                    style ={{width:'280px', height: '400px', marginRight: '10px', marginBottom : '20px'}}
+                    style ={{width:'280px', height: '420px', marginRight: '10px', marginBottom : '20px'}}
                     hoverable={true}
                     cover={<a href={`/product/${product._id}`} > <ImageSlider images={product.images} /></a>}
                 >
@@ -125,7 +125,7 @@ function HotCards() {
         if(product.continents === 5) {
             return (
                 <Card 
-                    style ={{width:'280px', height: '400px', marginRight: '10px', marginBottom : '20px'}}
+                    style ={{width:'280px', height: '420px', marginRight: '10px', marginBottom : '20px'}}
                     hoverable={true}
                     cover={<a href={`/product/${product._id}`} > <ImageSlider images={product.images} /></a>}
                 >
@@ -143,7 +143,7 @@ function HotCards() {
         if(product.continents === 6) {
             return (
                 <Card 
-                    style ={{width:'280px', height: '400px', marginRight: '10px', marginBottom : '20px'}}
+                    style ={{width:'280px', height: '420px', marginRight: '10px', marginBottom : '20px'}}
                     hoverable={true}
                     cover={<a href={`/product/${product._id}`} > <ImageSlider images={product.images} /></a>}
                 >

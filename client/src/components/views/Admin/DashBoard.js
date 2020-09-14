@@ -49,15 +49,15 @@ function DashBoard() {
                       <br/><br/><br/>
                       
                       <Row justify="space-around">
-                        <DashBoardGraph />
+                        <DashBoardGraph/>
                         <br/><br/><br/>
-                        <UserRatio />
+                        <UserRatio/>
                       </Row>
-                      
-                      <SellerInfo />
-                      <br/><br/><br/>
-                      
+                  
+                      <SellerInfo/>
+
                     </div>
+                    
                 </Content>
                 </Layout>
             </Layout>

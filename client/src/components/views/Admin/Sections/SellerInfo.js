@@ -98,31 +98,31 @@ function SellerInfo() {
 
 
     return (
-        <div>
-            <h1>SELLER LIST</h1>
-                <div style={{display: 'flex', justifyContent: 'flex-end', margin: '1rem auto'}}>
-                    <SearchFeature 
-                        refreshFunction={updateSearchTerm}
-                    />
+		<div style={{marginBottom : '70px'}}>
+			<h1>SELLER LIST</h1>
+				<div
+					style={{
+							display: 'flex',
+							justifyContent: 'flex-end',
+							margin: '1rem auto',
+						}}
+				>
+					<SearchFeature refreshFunction={updateSearchTerm} />
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<th>SellerID</th>
+							<th>사용자 이름</th>
+							<th>email</th>
+							<th>등급</th>
+							<th>삭제</th>
+						</tr>
+					</thead>
 
-                </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>UserID</th>
-                            <th>name</th>
-                            <th>email</th>
-                            <th>role</th>
-                            <th>remove</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        {renderItems}
-                    </tbody>
-                        
-                </table>
-            </div>
+					<tbody>{renderItems}</tbody>
+				</table>
+		</div>
     )  
             
 }
