@@ -21,7 +21,6 @@ function ProductImage(props) {
 		}
 	}, [props.detail]);
 	
-	console.log(Images);
     return (
 		<div width="1,0.5833333333333334" className="feTtOu">
             <div overflow="hidden" className="jbpLml">

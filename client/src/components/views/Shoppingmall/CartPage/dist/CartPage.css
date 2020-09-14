@@ -1,0 +1,33 @@
+.cart_wrapper {
+  width: 100%;
+  height: 100%;
+  margin: 10px;
+}
+.cart_wrapper header .cart_page {
+  width: 240px;
+  height: 120px;
+  margin: left;
+}
+.cart_wrapper header p {
+  margin-top: 1px;
+  color: #72787f;
+  font-size: 42px;
+}
+.cart_wrapper .pay_won {
+  width: 100%;
+  height: 100%;
+  margin: 70px;
+}
+
+.pay {
+  width: 100%;
+  height: 100%;
+  margin: 70px;
+}
+
+.request_pay {
+  font-size: 30px;
+  width: 100%;
+  height: 100%;
+  margin: 70px;
+}
