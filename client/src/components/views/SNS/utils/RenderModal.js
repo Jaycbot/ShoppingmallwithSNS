@@ -104,14 +104,16 @@ function RenderModal(props) {
 							userId={localStorage.getItem('userId')}
 							commentId={props.post._id}
 						/>
+						<div style={{display: 'flex', justifyContent: 'flex-end'}}>
+							{user && user._id === props.post.writer._id && (
+								<Button type="primary" onClick={() => editPage(props.post)}>수정</Button >
+							)}
 
-						{user && user._id === props.post.writer._id && (
-							<Button danger type="primary" onClick={() => removeItem(props.post._id)}>삭제</Button >
-						)}
-						
-						{user && user._id === props.post.writer._id && (
-							<Button   type="primary" onClick={() => editPage(props.post)}>수정</Button >
-						)}
+							{user && user._id === props.post.writer._id && (
+								<Button danger type="primary" onClick={() => removeItem(props.post._id)}>삭제</Button >
+							)}
+							
+						</div>
 					</div>
 				</div>
 			</Modal>

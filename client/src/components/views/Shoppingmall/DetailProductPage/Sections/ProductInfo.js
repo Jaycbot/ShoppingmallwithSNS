@@ -1,7 +1,7 @@
 import React from 'react'
 import {  Descriptions, Row } from 'antd'
 import { useDispatch } from 'react-redux'
-// import { Link } from "react-router-dom";
+import Paypal from '../../utils/Paypal'
 import { addToCart } from '../../../../../_actions/user_action'
 import './ProductInfo.scss' 
 
@@ -42,6 +42,11 @@ function ProductInfo(props) {
                           </button>
                           
                         </div>
+                        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '30px'}}>
+                        <Paypal 
+                            total = {props.detail.price}
+                        />
+                        </div> 
                       </div>               
                 
                 <br />
