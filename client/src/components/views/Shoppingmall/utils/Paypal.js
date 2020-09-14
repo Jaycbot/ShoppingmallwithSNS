@@ -1,5 +1,6 @@
 import React from 'react';
 import PaypalExpressBtn from 'react-paypal-express-checkout';
+import './Paypal.scss'
  
 export default class Paypal extends React.Component {
     render() {
@@ -41,6 +42,7 @@ export default class Paypal extends React.Component {
  
         // NB. You can also have many Paypal express checkout buttons on page, just pass in the correct amount and they will work!
         return (
+            <div className='pay_request'>
             <PaypalExpressBtn 
                 env={env} 
                 client={client} 
@@ -53,11 +55,10 @@ export default class Paypal extends React.Component {
                     size : 'large',
                     color : 'blue',
                     shape : 'rect',
-                    label : 'checkout',
-                   
-                                        
+                    label : 'checkout'
                 }}    
             />
+            </div>
         );
     }
 }

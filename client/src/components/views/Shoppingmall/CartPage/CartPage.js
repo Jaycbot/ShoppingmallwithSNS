@@ -119,21 +119,23 @@ function CartPage(props) {
 
             }
 
-            <div className="pay">
-                {ShowTotal &&
-                    <Paypal
-                        total={Total}
-                        onSuccess={transactionSuccess}
-                    />
-
-                }
-                </div>
+            
 
                 <div className="request_pay">
                     {ShowTotal &&
                     <RequestPay
                         total={Total}
                         onSuccess={transactionSuccess} />}
+                </div>
+
+                <div className="pay">
+                    {ShowTotal &&
+                    <Paypal
+                        total={Total}
+                        onSuccess={transactionSuccess}
+                    />
+
+                }
                 </div>
         </div>
     )
