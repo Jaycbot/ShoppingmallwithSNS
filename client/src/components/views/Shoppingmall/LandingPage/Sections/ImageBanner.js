@@ -1,6 +1,6 @@
 import React from 'react'
 import { Carousel, Typography } from 'antd'
-import { ArrowDownOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons'
+import { ArrowDownOutlined } from '@ant-design/icons'
 import './ImageBanner.scss'
 import clothe1 from './images/7.jpg'
 import clothe2 from './images/3.jpg'
