@@ -89,23 +89,17 @@ function OuterCategory() {
                 <Carousel autoplay effect="fade">
                     <div className="category-goods-label">
                         <div overflow="hidden" width="100%">
-                            <a href="https://www.styleshare.kr/catalogs/14476">
-                                <img className="ban_img"
-                                    src={outer} alt="img" />
-
-                            </a>
+                                <img className="ban_menuimg"
+                                    src={outer} alt="img"/>
                             </div>
                     </div>
                      
-                    <a href="https://www.styleshare.kr/catalogs/14445">
-                        <img className="ban_img"
+                        <img className="ban_menuimg"
                             src={outer2} alt="img" />
-
-                    </a>
                                        
                 </Carousel>
 
-                <p className="all-goods-in-category">전체보기</p>
+                <p className="all-goods-in-category" style={{marginTop : '50px', fontSize: '15px', fontWeight: 'bold'}}>전체보기</p>
                 <div className="sort-filter clearfix">
                     <div className="dropdown basic-select">
                         <Select defaultValue="Best" style={{ width: 120 }} onChange={handleChange} bordered={false}>
