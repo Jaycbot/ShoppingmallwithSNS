@@ -98,7 +98,7 @@ function ShoesCategory() {
                     </div>
                         <img className="ban_menuimg"
                             src={pros} alt="img" />
-
+ 
             
                         <img className="ban_menuimg"
                             src={shoes3} alt="img" />
