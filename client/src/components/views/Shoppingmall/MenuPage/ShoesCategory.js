@@ -4,7 +4,7 @@ import MenuCardImage from './MenuCardImage';
 import { Select, Col, Card, Row, Carousel } from 'antd';
 
 import shoes from './Img/프레드페리.PNG'
-import pros from './Img/pros.PNG'
+import nike from './Img/nike.PNG'
 import shoes3 from './Img/shoes3.PNG'
 import './Menu.scss'
 
@@ -97,8 +97,8 @@ function ShoesCategory() {
                             </div>
                     </div>
                         <img className="ban_menuimg"
-                            src={pros} alt="img" />
- 
+                            src={nike} alt="img" />
+
             
                         <img className="ban_menuimg"
                             src={shoes3} alt="img" />
