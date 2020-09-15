@@ -2,6 +2,7 @@ import React from 'react'
 import {  Descriptions, Row } from 'antd'
 import { useDispatch } from 'react-redux'
 import Paypal from '../../utils/Paypal'
+import RequestPay from '../../utils/Payment/RequestPay'
 import { addToCart } from '../../../../../_actions/user_action'
 import './ProductInfo.scss' 
 
@@ -31,21 +32,21 @@ function ProductInfo(props) {
                 <br />
                 <br />
                 <div className="buy_button_parent">
-                    <div className="get_cart_box">
                         
-                        <button 
-                        onClick={clickHandler} 
-                        className="get_cart_button" 
-                        
-                         >
-                            장바구니 담기
-                          </button>
-                          
-                        </div>
                         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '30px'}}>
-                        <Paypal 
-                            total = {props.detail.price}
-                        />
+                            <RequestPay 
+                                total = {props.detail.price}
+                            />
+                        </div> 
+                        <div className="get_cart_box">
+                            <button onClick={clickHandler} className="get_cart_button">
+                                장바구니 담기
+                            </button>
+                        </div>
+                        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px'}}>
+                            <Paypal 
+                                total = {props.detail.price}
+                            />
                         </div> 
                       </div>               
                 

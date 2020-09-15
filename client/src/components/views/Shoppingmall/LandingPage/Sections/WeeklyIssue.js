@@ -28,7 +28,7 @@ function WeeklyIssue() {
                                     </div>
                                 </div>
                                 <div class="Box-fzpncP dCSrgH">
-                                    <p color="gray90" font-weight="bold" class="Text-pXEYb StoreTrendIssues__MultilineText-gdNFPo dmMooq">Only StyleShare스타일쉐어 단독 상품</p>
+                                    <p color="gray90" font-weight="bold" class="Text-pXEYb StoreTrendIssues__MultilineText-gdNFPo dmMooq">Only 단독 상품</p>
                                     <p color="gray20" display="none,block" font-weight="bold" class="Text-pXEYb cibkws">140개 더 보기</p>
                                 </div>
                             </a>
@@ -93,7 +93,7 @@ function WeeklyIssue() {
                                     </div>
                                 </div>
                                 <div class="Box-fzpncP dCSrgH">
-                                    <p color="gray90" font-weight="bold" class="Text-pXEYb StoreTrendIssues__MultilineText-gdNFPo dmMooq">1만원대로 만나는 혜자 티셔츠시그니처는 오직 스쉐에서만!</p>
+                                    <p color="gray90" font-weight="bold" class="Text-pXEYb StoreTrendIssues__MultilineText-gdNFPo dmMooq">1만원대로 만나는 혜자 티셔츠시그니처!</p>
                                     <p color="gray20" display="none,block" font-weight="bold" class="Text-pXEYb cibkws">34개 더 보기</p>
                                 </div>
                             </a>

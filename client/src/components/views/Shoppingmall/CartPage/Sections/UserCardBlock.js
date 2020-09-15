@@ -1,6 +1,7 @@
 import React from 'react';
 import './UserCardBlock.scss';
 import { RoutingVariable } from '../../../../Config';
+
 function UserCardBlock(props) {
 	const renderCartImage = (images) => {
 		if (images.length > 0) {
@@ -15,15 +16,19 @@ function UserCardBlock(props) {
 			<tr key={index} style={{ fontSize: '15px' }}>
 				<td>
 					<div className="CartGoodsDesktop__goods-info">
-						<img
-							style={{ width: '70px', height: '50px' }}
-							alt="product"
-							src={renderCartImage(product.images)}
-						/>
+						<a href={`/product/${product._id}`} >
+							<img
+								style={{ width: '70px', height: '50px' }}
+								alt="product"
+								src={renderCartImage(product.images)}
+							/>
+						</a>
 						<div className="CartGoodsDesktop__goods-info-inner">
-							<p className="CartGoodsDesktop__goods-info-name">
-								{product.title}
-							</p>
+							<a href={`/product/${product._id}`} >
+								<p className="CartGoodsDesktop__goods-info-name">
+									{product.title}
+								</p>
+							</a>	
 						</div>
 					</div>
 				</td>
