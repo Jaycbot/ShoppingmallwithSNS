@@ -34,12 +34,12 @@ mongoose.Query.prototype.exec = async function () {
 
 	const cacheValue = await client.hget(this.hashKey, key);
 	if (cacheValue) {
-		console.log('캐싱 된 데이터 입니다.');
+		
 		const doc = JSON.parse(cacheValue);
 		return doc;
 	}
 	const result = await exec.apply(this, arguments);
-	console.log('캐싱 할 데이터 입니다.');
+	
 	client.hset(this.hashKey, key, JSON.stringify(result), (error) => {
 		if (error) {
 			console.log(error);
