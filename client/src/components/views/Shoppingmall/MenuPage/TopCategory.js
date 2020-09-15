@@ -5,6 +5,7 @@ import { Select, Col, Card, Row, Carousel } from 'antd';
 import top from './Img/top.PNG'
 import top2 from './Img/top2.PNG'
 import top3 from './Img/top3.PNG'
+import top4 from './Img/top4.PNG'
 import './Menu.scss'
 
 const { Meta } = Card;
@@ -91,28 +92,23 @@ function TopCategory() {
             <Carousel autoplay effect="fade">
                 <div className="category-goods-label">
                     <div overflow="hidden" width="100%">
-                        <a href="https://www.styleshare.kr/catalogs/14475">
-                            <img className="ban_img"
+                            <img className="ban_menuimg"
                                 src={top} alt="img" />
 
-                        </a>
                         </div>
                 </div>
-                 
-                <a href="https://www.styleshare.kr/catalogs/14427">
-                    <img className="ban_img"
+                    <img className="ban_menuimg"
                         src={top2} alt="img" />
 
-                </a>
-                <a href="https://www.styleshare.kr/catalogs/14474">
-                    <img className="ban_img"
+                    <img className="ban_menuimg"
                         src={top3} alt="img" />
 
-                </a>
+                    <img className="ban_menuimg"
+                        src={top4} alt="img" />
                 
             </Carousel>
 
-            <p className="all-goods-in-category">전체보기</p>
+            <p className="all-goods-in-category" style={{marginTop : '50px', fontSize: '15px', fontWeight: 'bold'}}>전체보기</p>
             <div className="sort-filter clearfix">
                 <div className="dropdown basic-select">
                     <Select defaultValue="Best" style={{ width: 120 }} onChange={handleChange} bordered={false}>

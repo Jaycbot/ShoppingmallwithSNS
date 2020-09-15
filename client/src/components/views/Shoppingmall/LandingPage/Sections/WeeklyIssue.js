@@ -4,7 +4,7 @@ import './WeeklyIssue.scss'
 function WeeklyIssue() {
     return (
         
-        <div className="Box-fzpncP jUQCwF">
+        <div className="Box-fzpncP jUQCwF" style={{marginLeft: '20px', marginRight: '10px'}}>
             <div className="Box-fzpncP dcUIZv">
                 <div className="Box-fzpncP kbLWSI">
                     <h2 style={{color:"#333333", fontWeight: "bold"}} className="Text-pXEYb jtrXAN">트렌드 기획전</h2>
@@ -13,7 +13,7 @@ function WeeklyIssue() {
                 <div display="flex" className="egJJoT">
                     <div width="1,0.5" class="Box-fzpncP Grid__Column-dAGzcc issKbk">
                         <div class="trend-issue">
-                            <a class="AltLink__StyledAnchor-dDiZHJ gtGpwt trend-issue__link" href="https://www.styleshare.kr/catalogs/6914">
+                            <a class="AltLink__StyledAnchor-dDiZHJ gtGpwt trend-issue__link">
                                 <div height="0px" class="Box-fzpncP kQYoxc">
                                     <div height="100%" overflow="hidden" width="100%" class="Box-fzpncP dxhqlT">
                                         <div class="Picture___StyledDiv-iQvpuV bChPwx">
@@ -28,7 +28,7 @@ function WeeklyIssue() {
                                     </div>
                                 </div>
                                 <div class="Box-fzpncP dCSrgH">
-                                    <p color="gray90" font-weight="bold" class="Text-pXEYb StoreTrendIssues__MultilineText-gdNFPo dmMooq">Only StyleShare스타일쉐어 단독 상품</p>
+                                    <p color="gray90" font-weight="bold" class="Text-pXEYb StoreTrendIssues__MultilineText-gdNFPo dmMooq">Only 단독 상품</p>
                                     <p color="gray20" display="none,block" font-weight="bold" class="Text-pXEYb cibkws">140개 더 보기</p>
                                 </div>
                             </a>
@@ -36,7 +36,7 @@ function WeeklyIssue() {
                     </div>
                     <div width="1,0.5" class="Box-fzpncP Grid__Column-dAGzcc issKbk">
                         <div class="trend-issue">
-                            <a class="AltLink__StyledAnchor-dDiZHJ gtGpwt trend-issue__link" href="https://www.styleshare.kr/catalogs/14001">
+                            <a class="AltLink__StyledAnchor-dDiZHJ gtGpwt trend-issue__link">
                                 <div height="0px" class="Box-fzpncP kQYoxc"><div height="100%" overflow="hidden" width="100%" class="Box-fzpncP dxhqlT">
                                     <div class="Picture___StyledDiv-iQvpuV bChPwx">
                                         <div style={{paddingBottom: '56%'}}></div>
@@ -57,7 +57,7 @@ function WeeklyIssue() {
                     </div>
                     <div width="1,0.5" class="Box-fzpncP Grid__Column-dAGzcc issKbk">
                         <div class="trend-issue">
-                            <a class="AltLink__StyledAnchor-dDiZHJ gtGpwt trend-issue__link" href="https://www.styleshare.kr/catalogs/13993">
+                            <a class="AltLink__StyledAnchor-dDiZHJ gtGpwt trend-issue__link">
                                 <div height="0px" class="Box-fzpncP kQYoxc">
                                     <div height="100%" overflow="hidden" width="100%" class="Box-fzpncP dxhqlT">
                                         <div class="Picture___StyledDiv-iQvpuV bChPwx">
@@ -79,7 +79,7 @@ function WeeklyIssue() {
                     </div>
                     <div width="1,0.5" class="Box-fzpncP Grid__Column-dAGzcc issKbk">
                         <div class="trend-issue">
-                            <a class="AltLink__StyledAnchor-dDiZHJ gtGpwt trend-issue__link" href="https://www.styleshare.kr/catalogs/14000">
+                            <a class="AltLink__StyledAnchor-dDiZHJ gtGpwt trend-issue__link">
                                 <div height="0px" class="Box-fzpncP kQYoxc">
                                     <div height="100%" overflow="hidden" width="100%" class="Box-fzpncP dxhqlT">
                                         <div class="Picture___StyledDiv-iQvpuV bChPwx">
@@ -93,7 +93,7 @@ function WeeklyIssue() {
                                     </div>
                                 </div>
                                 <div class="Box-fzpncP dCSrgH">
-                                    <p color="gray90" font-weight="bold" class="Text-pXEYb StoreTrendIssues__MultilineText-gdNFPo dmMooq">1만원대로 만나는 혜자 티셔츠시그니처는 오직 스쉐에서만!</p>
+                                    <p color="gray90" font-weight="bold" class="Text-pXEYb StoreTrendIssues__MultilineText-gdNFPo dmMooq">1만원대로 만나는 혜자 티셔츠시그니처!</p>
                                     <p color="gray20" display="none,block" font-weight="bold" class="Text-pXEYb cibkws">34개 더 보기</p>
                                 </div>
                             </a>

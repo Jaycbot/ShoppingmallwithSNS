@@ -1,11 +1,12 @@
 import React from 'react'
 import { Carousel, Typography } from 'antd'
-import { ArrowDownOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons'
+import { ArrowDownOutlined } from '@ant-design/icons'
 import './ImageBanner.scss'
-import clothe1 from './images/7.jpg'
-import clothe2 from './images/3.jpg'
-import clothe3 from './images/5.jpg'
-import clothe4 from './images/8.jpg'
+import clothe1 from './images/landingbanner1.jpg'
+import clothe2 from './images/landingbanner2.jpg'
+import clothe3 from './images/landingbanner3.jpg'
+import clothe4 from './images/landingbanner4.jpg'
+import clothe5 from './images/landingbanner5.jpg'
 
 const { Title } = Typography;
 
@@ -20,7 +21,7 @@ function ImageBanner() {
                                     src={clothe1} alt="img1"/>
                                 <div>
                                     <div className="ban_div" >
-                                        <Title style={{ color: 'white' }} level={5} >현대백화점 지프 특가</Title>
+                                        <Title style={{ color: 'white'}} level={10} >현대백화점 지프 특가</Title>
                                         <p className="ban_p_white">백화점에서만 볼수 있던 매력적인 브랜드를 이제 만나보세요</p>
                                     </div>
                                 </div>
@@ -32,7 +33,7 @@ function ImageBanner() {
                                     src={clothe2} alt="img2"/>
                                 <div>
                                     <div className="ban_div" >
-                                        <Title style={{ color: '#1B1D1F' }} level={5} > 여름 옷장 고민끝! </Title>
+                                        <Title style={{ color: '#1B1D1F' }} level={10} > 여름 옷장 고민끝! </Title>
                                         <p className="ban_p">올 여름 옷장고민을 멈춰줄 컬렉션 ~70%</p>
                                     </div>
                                 </div>
@@ -44,7 +45,7 @@ function ImageBanner() {
                                     src={clothe3} alt="img3"/>
                                 <div>
                                     <div className="ban_div" >
-                                        <Title style={{ color: '#1B1D1F' }} level={5} >달콤한 시즌 오프 키르시</Title>
+                                        <Title style={{ color: '#1B1D1F' }} level={10} >달콤한 시즌 오프 키르시</Title>
                                         <p className="ban_p">기다려온 시즌오프 최대 60% 찬스는 놓치면 후회!</p>
                                     </div>
                                 </div>
@@ -56,13 +57,25 @@ function ImageBanner() {
                                     src={clothe4} alt="img4"/>
                                 <div>
                                     <div className="ban_div" >
-                                        <Title style={{ color: '#1B1D1F' }} level={5} >현대백화점 피어플렉스</Title>
+                                        <Title style={{ color: '#1B1D1F' }} level={10} >현대백화점 피어플렉스</Title>
                                         <p className="ban_p">편집샵 PEER UP TO 64%</p>
                                     </div>
                                 </div>
                                 </a>
                             </div>
-        
+                            <div>
+                                <a href="/shoppingmall/eventpage">
+                                <img className="ban_img"
+                                    src={clothe5} alt="img4"/>
+                                <div>
+                                    <div className="ban_div" >
+                                        <Title style={{ color: 'white' }} level={10} >현대백화점 피어플렉스</Title>
+                                        <p className="ban_p_white">편집샵 PEER UP TO 64%</p>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+         
                 </Carousel>
                 {/* <a className="ban_icon_left">
                     <LeftOutlined fill= "currentcolor"/>

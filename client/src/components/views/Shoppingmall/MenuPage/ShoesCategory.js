@@ -4,7 +4,7 @@ import MenuCardImage from './MenuCardImage';
 import { Select, Col, Card, Row, Carousel } from 'antd';
 
 import shoes from './Img/프레드페리.PNG'
-import pros from './Img/pros.PNG'
+import nike from './Img/nike.PNG'
 import shoes3 from './Img/shoes3.PNG'
 import './Menu.scss'
 
@@ -92,28 +92,21 @@ function ShoesCategory() {
                 <Carousel autoplay effect="fade">
                     <div className="category-goods-label">
                         <div overflow="hidden" width="100%">
-                            <a href="https://www.styleshare.kr/catalogs/14427">
-                                <img className="ban_img"
+                                <img className="ban_menuimg"
                                     src={shoes} alt="img" />
-
-                            </a>
                             </div>
                     </div>
-                     
-                    <a href="https://www.styleshare.kr/catalogs/14427">
-                        <img className="ban_img"
-                            src={pros} alt="img" />
+                        <img className="ban_menuimg"
+                            src={nike} alt="img" />
 
-                    </a>
-                    <a href="https://www.styleshare.kr/catalogs/14462">
-                        <img className="ban_img"
+            
+                        <img className="ban_menuimg"
                             src={shoes3} alt="img" />
 
-                    </a>
                     
                 </Carousel>
                
-                <p className="all goods-in-category">전체보기</p>
+                <p className="all-goods-in-category" style={{marginTop : '50px', fontSize: '15px', fontWeight: 'bold'}}>전체보기</p>
                 <div className="sort-filter clearfix">
                     <div className="dropdown basic-select">
                         <Select defaultValue="Best" style={{ width: 120 }} onChange={handleChange} bordered={false}>

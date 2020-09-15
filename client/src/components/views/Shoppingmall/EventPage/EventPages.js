@@ -3,7 +3,6 @@ import axios from 'axios'
 import {Card, Row} from 'antd'
 import ImageSlider from '../utils/ImageSlider';
 import './EventPages.scss'
-import { FileExcelFilled } from '@ant-design/icons';
 
 const {Meta} = Card
 
@@ -25,7 +24,7 @@ function EventPages() {
     }, [])
 
     const getProducts = (body) => {
-
+ 
         axios.post('/api/product/newproducts', body)
             .then(response => {
                 if(response.data.success) {
@@ -40,7 +39,8 @@ function EventPages() {
     const renderCards = Products.map((product, index) => {
         return (
             <Card 
-                style ={{width:'280px', height: '400px' , marginRight: '22px', marginBottom : '20px'}}
+                style ={{width:'280px', height: '420px' , marginRight: '22px', marginBottom : '20px', border: '2px solid #E8EBED',
+                borderRadius: '20px',}}
                 hoverable={true}
                 cover={<a href={`/product/${product._id}`} > <ImageSlider images={product.images} /></a>}
             >

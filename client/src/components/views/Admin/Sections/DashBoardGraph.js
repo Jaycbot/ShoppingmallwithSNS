@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,  PieChart, Pie, Cell,
+  PieChart, Pie, Cell,
 } from 'recharts';
-import { Row } from 'antd';
 
 function DashBoardGraph() {
 

@@ -228,13 +228,13 @@ embed, img, object {
     transition: color 0.25s ease-in-out 0s;
 }
 
-.ban_img {
+.ban_menuimg {
     background:
         linear-gradient(to bottom, rgba(0,0,0,0)
                             39%,rgba(0,0,0,0)
                             41%,rgba(0,0,0,0.65)
                             100%);
-        height: 900px;
+        height: 520px;
         background-size: 100%, cover;
         background-position: center, center;
         width: 100%;

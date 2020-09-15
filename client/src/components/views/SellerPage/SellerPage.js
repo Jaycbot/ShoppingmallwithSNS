@@ -1,7 +1,5 @@
 import React from 'react'
 import ProductCardBlock from './Sections/ProductCardBlock'
-import Axios from 'axios'
-
 
 function SellerPage(props) {
  

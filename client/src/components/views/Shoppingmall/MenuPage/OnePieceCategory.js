@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import MenuCardImage from './MenuCardImage';
-import { Select, Col, Card, Row } from 'antd';
+import { Select, Col, Card, Row, Carousel } from 'antd';
 import './Menu.scss'
 
 const { Meta } = Card;
@@ -86,9 +86,21 @@ function OnePieceCategory() {
     return (
         <article className="store-page page">
             <div className="category-container best-category clearfix">
+            <Carousel autoplay effect="fade">
                 <div className="category-goods-label">
-                    <p className="all-goods-in-category">전체보기</p>    
+                    <div overflow="hidden" width="100%">
+                            <img className="ban_menuimg"
+                                src="https://usercontents-c.styleshare.io/images/46802434/2560x1440" alt="img" />
+
+                        </div>
                 </div>
+                    <img className="ban_menuimg"
+                        src="https://usercontents-c.styleshare.io/images/46834168/1500x844" alt="img" />
+
+                
+            </Carousel>
+                <p className="all-goods-in-category" style={{marginTop : '50px', fontSize: '15px', fontWeight: 'bold'}}>전체보기</p>
+
                 <div className="sort-filter clearfix">
                     <div className="dropdown basic-select">
                     <Select defaultValue="Best" style={{ width: 120 }} onChange={handleChange} bordered={false}>
