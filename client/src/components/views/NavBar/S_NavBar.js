@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import Sns_NavBar from './s_sections/SNS_NavBar';
 import Store_NavBar from './s_sections/Stroe_NavBar';
 import './S_NavBar.scss';
 

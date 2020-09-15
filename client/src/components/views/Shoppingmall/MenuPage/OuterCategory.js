@@ -4,6 +4,7 @@ import MenuCardImage from './MenuCardImage';
 import { Select, Col, Card, Row, Carousel } from 'antd';
 import outer from './Img/outer.PNG'
 import outer2 from './Img/outer2.PNG'
+import outer3 from './Img/outer3.PNG'
 import './Menu.scss'
 
 const { Meta } = Card;
@@ -89,23 +90,20 @@ function OuterCategory() {
                 <Carousel autoplay effect="fade">
                     <div className="category-goods-label">
                         <div overflow="hidden" width="100%">
-                            <a href="https://www.styleshare.kr/catalogs/14476">
-                                <img className="ban_img"
-                                    src={outer} alt="img" />
-
-                            </a>
+                                <img className="ban_menuimg"
+                                    src={outer3} alt="img"/>
                             </div>
                     </div>
                      
-                    <a href="https://www.styleshare.kr/catalogs/14445">
-                        <img className="ban_img"
+                        <img className="ban_menuimg"
                             src={outer2} alt="img" />
-
-                    </a>
+                            
+                        <img className="ban_menuimg"
+                            src={outer} alt="img" />
                                        
                 </Carousel>
 
-                <p className="all-goods-in-category">전체보기</p>
+                <p className="all-goods-in-category" style={{marginTop : '50px', fontSize: '15px', fontWeight: 'bold'}}>전체보기</p>
                 <div className="sort-filter clearfix">
                     <div className="dropdown basic-select">
                         <Select defaultValue="Best" style={{ width: 120 }} onChange={handleChange} bordered={false}>
