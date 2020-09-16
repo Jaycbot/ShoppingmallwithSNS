@@ -50,7 +50,6 @@ function EditPostPage(props) {
 			}
 		});
 	};
-	console.log(Images);
 
 	const textChangeHandler = (event) => {
 		setEdit(event.currentTarget.value);

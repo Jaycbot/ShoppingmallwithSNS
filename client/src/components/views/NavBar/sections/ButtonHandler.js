@@ -21,7 +21,7 @@ function ButtonHandler(props) {
             if (response.data.success) {
                 props.history.push('/login');
             } else {
-                console.log('로그아웃에 실패하였습니다');
+                
             }
         });
     };

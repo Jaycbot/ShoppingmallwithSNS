@@ -1,6 +1,6 @@
 .update_container {
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 
 	.left_navbar {
 		display: flex;
@@ -8,6 +8,7 @@
 		justify-content: flex-start;
 		margin-top: 2rem;
 		margin-left: 6rem;
+		margin-right: 10rem;
 		
 		.profile {
 			

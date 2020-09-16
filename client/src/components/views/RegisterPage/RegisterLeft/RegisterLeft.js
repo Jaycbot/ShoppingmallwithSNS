@@ -39,10 +39,10 @@ function RegisterLeft(props) {
 		};
 		dispatch(registerUser(body)).then((response) => {
 			if (response.payload.success) {
-				console.log("회원가입 성공");
+				//console.log("회원가입 성공");
 				props.history.push('/login'); //react에서 페이지를 이동시키는 방식
 			} else {
-				console.log("회원가입 실패");
+				//console.log("회원가입 실패");
 				alert('Fail');
 			}
 		});

@@ -11,7 +11,7 @@ function LikeButton(props) {
 	// let likesNum = props.match.params.likes
 
 	useEffect(() => {
-		console.log(props);
+		//console.log(props);
 		let body = {
 			// likes : likesNum
 		}

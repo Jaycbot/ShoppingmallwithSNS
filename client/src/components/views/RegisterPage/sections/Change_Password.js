@@ -14,7 +14,7 @@ function Change_Password() {
 		if (user) {
 			setId(user._id);
 		}
-	}, [user]);
+	}, [user]); 
 
 	const currentPasswordHandler = (e) => {
 		setCurrentPassword(e.target.value);
@@ -79,7 +79,7 @@ function Change_Password() {
 					
 				</div>
 				<div className="input_label">
-					<label htmlFor="confirm" className="input-text" >확인</label>
+					<label htmlFor="confirm" className="input-text" >비밀번호 확인</label>
 					<input
 					className="label1"
 						type="password"
