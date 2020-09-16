@@ -12,7 +12,7 @@ class RequestPay extends React.Component {
         pay_method : 'card',	// 결제 수단
         merchant_uid : 'merchant_' + new Date().getTime(),
         name : 'Style Share',	// order 테이블에 들어갈 주문명 혹은 주문 번호
-        amount : '1',	// 결제 금액
+        amount : this.props.total,	// 결제 금액
         buyer_email : '',	// 구매자 email
         buyer_name :  '',	// 구매자 이름
         buyer_tel :  '',	// 구매자 전화번호
