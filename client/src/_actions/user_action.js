@@ -46,7 +46,6 @@ export function updateUser(dataToSend) {
 		.post('/api/users/update', dataToSend)
 		.then((response) => {
 			if (response.data.success) {
-				console.log(response.data);
 				return response.data;
 			} else {
 				alert('전송 실패');

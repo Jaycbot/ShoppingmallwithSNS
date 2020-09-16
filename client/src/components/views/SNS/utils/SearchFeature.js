@@ -23,7 +23,7 @@ function SearchFeature(props) {
         axios.post('/api/sns/getsearch', body)
             .then(response => {
                 if (response.data.success) {
-                    console.log(123);
+                    //console.log(123);
                     setSearchWord(response.data.posts)
                 } else {
                     alert("검색결과가 없습니다.")
@@ -33,7 +33,7 @@ function SearchFeature(props) {
 
 
     const SearchKeyword = (keyword) => {
-        console.log(keyword);
+        //console.log(keyword);
 
         let body = {
             searchTerm: keyword

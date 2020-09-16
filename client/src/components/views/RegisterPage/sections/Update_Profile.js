@@ -70,7 +70,7 @@ function Update_Profile(props) {
 			email,
 		};
 		dispatch(updateUser(data)).then((response) => {
-			console.log(response);
+			//console.log(response);
 			if (response && response.payload) {
 				swal('회원정보 수정을 성공했습니다.');
 			} else {
@@ -116,7 +116,7 @@ function Update_Profile(props) {
 					<div className="user_image">{imageRender()}</div>
 					<div className="user_info_button">
 						<input type="file" onChange={onImageChange} id="file" />
-						<button onClick={changeProfileImage}>바꾸기</button>
+						<button onClick={changeProfileImage}>사진 변경</button>
 					</div>
 				</div>
 				<div className="user_detail">
@@ -148,7 +148,7 @@ function Update_Profile(props) {
 			<br />
 			<br />
 			<div className="sign_out">
-				<Button type="ghost" onClick={withdrawFromAccount}>
+				<Button type="danger" onClick={withdrawFromAccount}>
 					탈퇴하기
 				</Button>
 			</div>

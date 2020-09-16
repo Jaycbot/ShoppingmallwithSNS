@@ -51,7 +51,7 @@ function UserPage(props) {
 				swal('관리자 변경완료');
 
 				getUsers();
-				console.log(response.data);
+				
 			} else {
 				swal('실패');
 			}
@@ -67,7 +67,7 @@ function UserPage(props) {
 			if (response.data.success) {
 				swal('회원등급 변경완료');
 				getUsers();
-				console.log(response.data);
+				
 			} else {
 				swal('실패');
 			}
@@ -82,7 +82,7 @@ function UserPage(props) {
 			if (response.data.success) {
 				swal('회원등급 변경완료');
 				getUsers();
-				console.log(response.data);
+				
 			} else {
 				swal('실패');
 			}
@@ -177,10 +177,10 @@ function UserPage(props) {
 					collapsedWidth="0"
 					onBreakpoi
 					nt={(broken) => {
-						console.log(broken);
+						
 					}}
 					onCollapse={(collapsed, type) => {
-						console.log(collapsed, type);
+						
 					}}
 				>
 					<div className="logo" />

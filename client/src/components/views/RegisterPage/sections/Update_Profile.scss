@@ -1,8 +1,8 @@
 .update_user_container {
 	border: 1px solid #e8ebed;
-	height: 589px;
-	width: 699px;
-	margin-top: 1rem;
+	height: 600px;
+	width: 700px;
+	margin-top: 2rem;
 	margin-right: 6rem;
 	background-color: #ffffff;
 	z-index: 3;
@@ -32,7 +32,7 @@
 		height: 200px;
 		margin-left: 1rem;
 	}
-	.user_image_change {
+	.user_image_change { 
 		width: 50%;
 	}
 	.user_info_button {
@@ -45,7 +45,7 @@
 			background-color: #ffffff;
 			width: 80px;
 			height: 50px;
-			font-size: 13.3;
+			font-size: 14px;
 			font-weight: 700;
 			border: 1px solid #c9cdd2;
 			border-radius: 10px;
@@ -76,5 +76,10 @@
 		margin-top: 2rem;
 		float: right;
 		margin-right: 60px;
+	}
+	.sign_out {
+		margin-top: 2rem;
+		float: right;
+		margin-right: -90px;
 	}
 }
