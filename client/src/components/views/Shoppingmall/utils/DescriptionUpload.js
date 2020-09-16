@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Dropzone from 'react-dropzone'
 import { PlusOutlined } from '@ant-design/icons';
+import {RoutingVariable} from '../../../Config'
 import axios from 'axios'
 
 function DescriptionUpload(props) {
@@ -62,7 +63,7 @@ function DescriptionUpload(props) {
                 {Images.map((image, index) => (
                     <div onClick={()=> deleteHandler(image)} key={index}>
                         <img style={{ minWidth: '300px', width: '300px', height:' 240px'}} 
-                            src={`http://localhost:5000/${image}`}
+                            src={`${RoutingVariable}${image}`}
                             alt={`productImg-${index}`}
                         />
                     </div>

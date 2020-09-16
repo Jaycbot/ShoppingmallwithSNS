@@ -88,31 +88,33 @@ function LikeDislikes(props) {
 	const [Likes, setLikes] = useState(0);
 	const [LikeAction, setLikeAction] = useState(null);
 
-
 	let variable = {};
 
-	if (props.modal) {
-		variable = { userId: props.userId, commentId: props.commentId };
-	}
-
+	
 	useEffect(() => {
-		axios.post('/api/like/getLikes', variable).then((response) => {
-			if (response.data.success) {
-				//얼마나 많은 좋아요를 받았는디
-				setLikes(response.data.likes.length);
 
-				//내가 이미 그 좋아요를 눌렸는지
-				response.data.likes.map((like) => {
-					if (like.userId === props.userId) {
-						setLikeAction('liked');
-					}
-				});
-			} else {
-				alert('Likes에 정보를 가져오지 못했습니다.');
-			}
-		});
+		if(props && props.modal){
+			variable = { userId: props.userId, commentId: props.commentId };
+			axios.post('/api/like/getLikes', variable).then((response) => {
+				if (response.data.success) {
+					//얼마나 많은 좋아요를 받았는디
+					setLikes(response.data.likes.length);
+	
+					//내가 이미 그 좋아요를 눌렸는지
+					response.data.likes.map((like) => {
+						if (like.userId === props.userId) {
+							setLikeAction('liked');
+						}
+					});
+				} else {
+					alert('Likes에 정보를 가져오지 못했습니다.');
+				}
+			});
+	
 
-	}, []);
+		}
+		
+	}, [props.modal]);
 
 	const onLike = () => {
 		if (LikeAction === null) {

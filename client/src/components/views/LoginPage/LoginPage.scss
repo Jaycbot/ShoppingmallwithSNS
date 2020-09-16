@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kufam:wght@600&family=Oswald:wght@500&display=swap');
+
 @mixin background_Img {
     position: absolute;
     top: 0px;
@@ -52,6 +54,10 @@
         border-radius: 6px;
         opacity: 0.9;
         
+        .login_main_header{
+          font-family: 'Kufam', cursive;
+          font-family: 'Oswald', sans-serif;
+        }
           
         header {
           .login_title {

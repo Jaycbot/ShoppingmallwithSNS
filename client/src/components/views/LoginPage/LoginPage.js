@@ -22,7 +22,8 @@ class LoginPage extends React.Component {
             <div className="login_box">
               <div className="login_main_header">
                 <Link to="/sns">
-                <img src={StyleShare} alt="img"></img>
+               <h1>Social Network Store</h1>
+               <h1>S.N.S</h1>
                 </Link>
               </div>
               <header>
