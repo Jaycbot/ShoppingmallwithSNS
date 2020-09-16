@@ -11,7 +11,7 @@ function RenderText(props) {
 				if (content.charAt(0) === '#') {
 					postingText += `<a href="/search/${content.substr(
 						1
-					)}">${content} </a>`;
+					)}" , style="color : red; ">${content} </a>`;
 				} else {
 					postingText += content + ' ';
 				}

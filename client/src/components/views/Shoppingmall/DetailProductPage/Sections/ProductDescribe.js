@@ -29,18 +29,7 @@ function ProductDescribe(props) {
                         ))}
                     </picture>
                 </p>
-                { PostSize >= 0 && (
-                <div className="Box-fzpncP Flex-qawHp Grid__Row-hAirfs cukPBe" style={{display: 'flex'}}>
-
-
-                    <div width="1,0.3333333333333333" className="Box-fzpncP Grid__Column-dAGzcc kLGjpY">
-                        <button width="100%" style={{display: 'flex', fontWeight : "bold"}} className="BaseButton-fEuaOx Button__ButtonWithIcon-fYDSEL bSJKSD"> 이미지 더보기 
-                            <svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" class="sc-AxgMl cNFEUw"><path fill-rule="evenodd" d="M18.66 9.5c.002.2-.078.39-.22.53l-6 6a.75.75 0 01-1.06 0l-6-6A.75.75 0 016.44 9l5.47 5.44L17.38 9a.75.75 0 011.28.5z"></path></svg>
-                        </button>
-                    </div>
-
-
-                </div>)}
+            
                 
                 </Panel>
                 <Panel header="배송/교환/반품" key="2" className="Text-pXEYb cpraeM">

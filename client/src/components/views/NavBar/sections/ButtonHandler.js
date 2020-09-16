@@ -2,7 +2,6 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
-import LandingPageNav from './LandingPageNav'
 import LoginHandler from './LoginHandler'
 import SNSBorder from './SNS_Border'
 import LogoutHandler from './LogoutHandler'
