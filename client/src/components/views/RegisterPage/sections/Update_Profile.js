@@ -73,6 +73,7 @@ function Update_Profile(props) {
 			//console.log(response);
 			if (response && response.payload) {
 				swal('회원정보 수정을 성공했습니다.');
+				props.history.push("/")
 			} else {
 				swal('이미 존재하는 이메일 입니다.');
 			}
@@ -142,7 +143,7 @@ function Update_Profile(props) {
 			</section>
 			<div className="submit_change">
 				<Button type="ghost" onClick={handleSubmit}>
-					다 했어요
+					수정하기
 				</Button>
 			</div>
 			<br />
@@ -152,6 +153,7 @@ function Update_Profile(props) {
 					탈퇴하기
 				</Button>
 			</div>
+			
 		</div>
 	);
 }
