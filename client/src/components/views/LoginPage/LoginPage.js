@@ -2,11 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom";
 import LoginLeft from "./LoginLeft/LoginLeft";
 import LoginRight from "./LoginRight/LoginRight";
-import StyleShare from "../../Img/style__share.PNG";
-
 import './LoginPage.scss'
-
-// import key from './config'
 
 class LoginPage extends React.Component {
   render() {

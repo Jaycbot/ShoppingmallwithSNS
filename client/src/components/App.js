@@ -39,7 +39,10 @@ function App() {
 				<NavBar />
 				<S_NavBar />
 				<Switch>
+
 					<Route exact path="/" component={Auth(Shop_Landingpage, null)} />
+					
+					<Route exact path="/shoppingmall" component={Auth(Shop_Landingpage, null)} />
 					<Route exact path="/login" component={Auth(LoginPage, false)} />
 					<Route exact path="/register" component={Auth(RegisterPage, false)} />
 					<Route exact path="/mypage" component={Auth(Mypage, true)} />

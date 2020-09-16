@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Collapse } from 'antd';
 import {RoutingVariable} from '../../../../Config'
 import './ProductDescribe.scss' 
- 
+
 const { Panel } = Collapse;
 
 function ProductDescribe(props) {

@@ -2,7 +2,6 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
-import LandingPageNav from './LandingPageNav'
 import LoginHandler from './LoginHandler'
 import SNSBorder from './SNS_Border'
 import LogoutHandler from './LogoutHandler'
@@ -22,7 +21,7 @@ function ButtonHandler(props) {
             if (response.data.success) {
                 props.history.push('/login');
             } else {
-                console.log('로그아웃에 실패하였습니다');
+                
             }
         });
     };

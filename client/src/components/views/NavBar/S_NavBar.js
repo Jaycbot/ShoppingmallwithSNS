@@ -19,11 +19,20 @@ function S_NavBar(props) {
 			return;
 		}
 	};
+	
+	const NavBarSSS = () => {
+		if (props.history.location.pathname.substring(0, 1) === '/') {
+			return <Store_NavBar />;
+		} else {
+			return;
+		}
+	};
 
 	return (
 		<div className="s_nav_container">
 			<div className="s_nav_1">{NavBarS()}</div>
 			<div className="s_nav_2">{NavBarSS()}</div>
+			<div className="s_nav_3">{NavBarSSS()}</div>
 		</div>
 	);
 }
