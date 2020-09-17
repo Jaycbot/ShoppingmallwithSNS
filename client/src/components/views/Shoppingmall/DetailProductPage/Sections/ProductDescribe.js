@@ -30,7 +30,6 @@ function ProductDescribe(props) {
                     </picture>
                 </p>
             
-                
                 </Panel>
                 <Panel header="배송/교환/반품" key="2" className="Text-pXEYb cpraeM">
                 <p><div class="Box-fzpncP Collapsible__Panel-gHQxNs cMXQmD">

@@ -35,6 +35,6 @@ app.use('/api/product', require('./server/routes/product'));
 
 app.use('/api/like', require('./server/routes/like'));
 
-app.use('/uploads', express.static('uploads'));
+app.use('/api/uploads/uploads', express.static('uploads'));
 
 app.listen(port, () => console.log(`Example app Listening on port ${port}`));

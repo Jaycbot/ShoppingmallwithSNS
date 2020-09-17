@@ -20,7 +20,7 @@ class RegisterPage extends React.Component {
           <div className="register_body">
             <div className="register_box">
               <Link to="/sns">
-               <h1>SocialNetworkStore</h1>
+               <h1>Social Network Store</h1>
                <h1>S.N.S</h1>
               </Link>
               <main>

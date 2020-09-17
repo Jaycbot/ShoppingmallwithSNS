@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { Like } = require('../models/Like');
-const { Dislike } = require('../models/DisLike');
-const { log } = require('console');
+// const { Dislike } = require('../models/DisLike');
 
 //=================================
 //             Product

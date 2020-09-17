@@ -91,7 +91,7 @@ function RenderDescription(props) {
 				<div style={{ display: 'flex' }}>
 					<img
 						style={{ width: '35px', height: '35px', borderRadius: '16px' }}
-						src={`${RoutingVariable}${comment.writer.image}`}
+						src={renderProfileImage()}
 						alt="유저이미지"
 					/>
 					<h3>&nbsp;&nbsp;{comment.writer.name}</h3>

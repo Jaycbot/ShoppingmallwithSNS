@@ -43,9 +43,9 @@ function LoginLeft(props) {
 						/>
 					</label>
 					<div className="forgot_info_div">
-						<a className="forgot_info" href="/">
+						{/* <a className="forgot_info" href="/">
 							ID가 기억이 나지 않으세요?
-						</a>
+						</a> */}
 					</div>
 					<label htmlFor="pwd" className="input_wrapper">
 						<input
@@ -57,9 +57,9 @@ function LoginLeft(props) {
 						></input>
 					</label>
 					<div className="forgot_info_div">
-						<a className="forgot_info" href="/">
+						{/* <a className="forgot_info" href="/">
 							비밀번호를 잊으셨나요?
-						</a>
+						</a> */}
 					</div>
 					<div className="login_btn_div">
 						<button type="submit" className="login_btn">
