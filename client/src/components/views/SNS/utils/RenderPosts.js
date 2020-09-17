@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import {useSelector} from 'react-redux';
 import { Card, Avatar, Row, Col } from 'antd';
 import RenderImages from './Sns_RenderImages';
 import RenderText from './RenderText';
@@ -16,9 +17,15 @@ function RenderPosts(props) {
 			return 'https://thumbs.dreamstime.com/b/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg';
 		}
 	};
+	
+	const user = useSelector(state => state.user.userData);
+	
 
-	return (
-		<div>
+	
+
+	const Rending = () =>{
+		return(
+			<div>
 			<Row gutter={[16, 32]}>
 				{props.posts.map((post) => {
 					if (post && post.writer) {
@@ -37,7 +44,7 @@ function RenderPosts(props) {
 										description={<RenderText post={post} />}
 									/>
 									<div style={{display : 'flex' , justifyContent : 'space-around'}}>
-									<LikeDislikes post={post}/>																			
+									<LikeDislikes post={post} user={user}/>																			
 									<Comment post={post} />
 									</div>
 								</Card>
@@ -47,7 +54,20 @@ function RenderPosts(props) {
 				})}
 			</Row>
 		</div>
-	);
-}
 
+		)
+
+
+	}
+
+
+	return	(
+		<div>
+			{user&& Rending()}
+		</div>
+		) 
+
+	
+
+	}
 export default RenderPosts;

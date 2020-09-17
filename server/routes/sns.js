@@ -198,10 +198,31 @@ router.post('/editText', clearCache, (req, res) => {
 });
 ///////////////////////////////////////////////////////////////////////////
 
+router.post('/upLikes', (req, res) => {
+	SNSPost.findOneAndUpdate(
+		{ _id: req.body.id },
+		{
+			$inc: {
+				likes: 1,
+			},
+		},
+		(err) => {
+			if (err) res.json({ success: false, err });
+			res.json({ success: true });
+		}
+	);
+});
+
+
+
+
+
+
 
 router.post('/getLikes', (req, res) => {
-	let likes = req.body.likes;
+	
 
+	let variable = {};
 
 	if (req.body.commentId) {
 		variable = { commentId: req.body.commentId , userId: req.body.userId };

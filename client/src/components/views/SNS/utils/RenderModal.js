@@ -99,11 +99,19 @@ function RenderModal(props) {
 						</div>
 
 						<br />
-						<LikeDislikes
+
+
+
+						<LikeDislikes post={props.post} user={user}/>
+						
+						
+						
+						
+						{/* <LikeDislikes
 							modal
 							userId={localStorage.getItem('userId')}
 							commentId={props.post._id}
-						/>
+						/> */}
 						<div style={{display: 'flex', justifyContent: 'flex-end'}}>
 							{user && user._id === props.post.writer._id && (
 								<Button type="primary" onClick={() => editPage(props.post)}>수정</Button >

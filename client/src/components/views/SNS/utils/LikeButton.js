@@ -21,7 +21,7 @@ function LikeButton(props) {
 	}, []);
 
 	const getLikes = (body)=>{
-		axios.post('/api/sns/post', body)
+		axios.post('/api/sns/upLikes', body)
 		.then((response) => {
 			if (response.data.success) {
 				//얼마나 많은 좋아요를 받았는디
@@ -41,8 +41,9 @@ function LikeButton(props) {
 		
 	const onLike = (body) => {
 		if (LikeAction === null) {
-			axios.post('/api/sns/upLike', body).then((response) => {
+			axios.post('/api/sns/upLikes', body).then((response) => {
 				if (response.data.success) {
+					console.log(response.data);
 					setLikes(Likes + 1);
 					setLikeAction('liked');			
 				} else {
