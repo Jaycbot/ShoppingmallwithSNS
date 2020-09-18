@@ -1,78 +1,55 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { loginUser } from '../../../_actions/user_action';
-import { withRouter } from 'react-router-dom';
-import KakaoLogin from 'react-kakao-login';
-import key from './config';
-function LoginPage(props) {
-	const dispatch = useDispatch();
-	const [Email, setEmail] = useState('');
-	const [Password, setPassword] = useState('');
-	const onEmailHandler = (event) => {
-		setEmail(event.currentTarget.value);
-	};
-	const onPasswordHandler = (event) => {
-		setPassword(event.currentTarget.value);
-	};
-	const onSubmitHandler = (event) => {
-		event.preventDefault(); //page가 refresh 되는 것을 막아줌
-		let body = {
-			email: Email,
-			password: Password,
-		};
-		dispatch(loginUser(body)).then((response) => {
-			if (response.payload.loginSuccess) {
-				props.history.push('/');
-			} else {
-				alert('Error');
-			}
-		});
-	};
-	const loginHandler = (res) => {
-		dispatch(loginUser(res)).then((response) => {
-			if (response.payload.loginSuccess) {
-				props.history.push('/');
-			} else {
-				alert('Error');
-			}
-		});
-	};
-	const errorHandler = (err) => {
-		console.log(err);
-		alert(err);
-	};
-	return (
-		<div
-			style={{
-				display: 'flex',
-				justifyContent: 'center',
-				alignItems: 'flex-start',
-				width: '100%',
-				height: '100vh',
-			}}
-		>
-			<form
-				style={{ display: 'flex', flexDirection: 'column', marginTop: '5em' }}
-				onSubmit={onSubmitHandler}
-			>
-				<label>Email</label>
-				<input type="email" value={Email} onChange={onEmailHandler} />
-				<label>Password</label>
-				<input type="password" value={Password} onChange={onPasswordHandler} />
-				<br />
-				<button type="submit">Login</button>
-				<div style={{ marginTop: '1em' }}>
-					<KakaoLogin
-						jsKey={key}
-						onSuccess={loginHandler}
-						onFailure={errorHandler}
-						getProfile="true"
-						buttonText="카카오톡 로그인"
-					/>
-				</div>
-			</form>
-		</div>
-	);
+import React from "react"
+import { Link } from "react-router-dom";
+import LoginLeft from "./LoginLeft/LoginLeft";
+import LoginRight from "./LoginRight/LoginRight";
+import './LoginPage.scss'
+
+class LoginPage extends React.Component {
+  render() {
+    return (
+
+      
+      <div className="login_wrapper">
+        <div className="login_bg_img">
+          <div className="login_bg"></div>
+        </div>
+        <div className="login_body_wrapper">
+          <div className="login_body">
+            <div className="login_box">
+              <div className="login_main_header">
+                <Link to="/sns">
+               <h1>Social Network Store</h1>
+               <h1>S.N.S</h1>
+                </Link>
+              </div>
+              <header>
+                <div className="login_title"></div>
+                <p>로그인</p>
+              </header>
+              <main>
+                <div className="login_main">
+                  <LoginLeft />
+                  <LoginRight />
+                </div>
+              </main>
+              <footer>
+                <div className="no_id">ID가 없으세요?</div>
+                <Link to="/register">
+                  <a>여기서 가입</a>
+                </Link>
+              </footer>
+            </div>
+            <div className="etc_info">
+              
+              <a href="https://www.bit.kr/05_bitcom/bitcom_01.aspx">StyleShare에 대하여</a>
+              <a href="https://www.bit.kr/03_custom/custom_01.aspx">고객센터</a>
+              <a href="https://www.bit.kr/etc/privacy.aspx"> 개인정보 취급방침</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
-export default withRouter(LoginPage);
+export default LoginPage;

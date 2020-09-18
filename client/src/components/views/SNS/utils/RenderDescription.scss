@@ -1,0 +1,49 @@
+.comments_from_user{
+    height: 400px;
+    overflow: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+
+.comments_from_user::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+
+.post_user_container{
+    display: flex;
+
+}
+
+ .comments_input{
+    .inputstyle{
+        width: 200px;
+    }
+ }
+ .post_info{
+     display: flex;
+     flex-direction: column;
+     .post_user_container{
+        .post_user_name{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            
+        }
+         .post_user_image{
+             img{
+                width: 40px;
+                height : 40px;
+                border-radius: 16px;
+             }
+         }
+         .post_user_name{
+             font-size: 25px;
+         }
+     }
+
+     .post_text{
+         font-size: 20px;
+     }
+     
+ }

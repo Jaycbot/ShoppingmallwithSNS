@@ -1,121 +1,64 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { Link, withRouter } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom';
+import LandingPageNav from './sections/LandingPageNav';
+import './NavBar.scss';
+import SearchBar from './SearchBar/Search/SearchBar';
+import ButtonHandler from './sections/ButtonHandler'
+import { AlignLeftOutlined } from '@ant-design/icons';
+import { Drawer, Button } from 'antd';
+
 function NavBar(props) {
-	const userData = useSelector((state) => state.user.userData);
-	const loginHandler = () => (
-		<div
-			style={{
-				float: 'right',
-				height: '100%',
-				display: 'flex',
-				justifyContent: 'flex-end',
-				alignItems: 'flex-start',
-			}}
-		>
-			<button
-				style={{
-					backgroundColor: '#1b1d1f',
-					color: '#FFFFFF',
-					borderRadius: '30px',
-					marginTop: '1em',
-					marginRight: '1em',
-					fontSize: '18px',
-					padding: '3em auto',
-					border: 'none',
-				}}
-			>
-				<Link to="/login" style={{ color: 'inherit' }}>
-					로그인
-				</Link>
-			</button>
-			<button
-				style={{
-					backgroundColor: '#1b1d1f',
-					color: '#FFFFFF',
-					borderRadius: '30px',
-					marginTop: '1em',
-					marginRight: '1em',
-					fontSize: '18px',
-					padding: '2em auto',
-					border: 'none',
-				}}
-			>
-				<Link to="/register" style={{ color: 'inherit' }}>
-					회원가입
-				</Link>
-			</button>
-		</div>
-	);
-	const onClickHandler = () => {
-		axios.get('/api/users/logout').then((response) => {
-			if (response.data.success) {
-				props.history.push('/login');
-			} else {
-				console.log('로그아웃에 실패하였습니다');
-			}
-		});
+
+	const [visible, setVisible] = useState(false)
+	const showDrawer = () => {
+		setVisible(true)
 	};
-	const logoutHandler = () => (
-		<div
-			style={{
-				float: 'right',
-				height: '100%',
-				display: 'flex',
-				justifyContent: 'flex-end',
-				alignItems: 'flex-start',
-			}}
-		>
-			<button
-				onClick={onClickHandler}
-				style={{
-					backgroundColor: '#1b1d1f',
-					color: '#FFFFFF',
-					borderRadius: '30px',
-					marginTop: '1em',
-					marginRight: '1em',
-					fontSize: '18px',
-					padding: '2em auto',
-					border: 'none',
-				}}
-			>
-				로그아웃
-			</button>
-		</div>
-	);
+	const onClose = () => {
+		setVisible(false)
+	};
+
 
 	return (
-		<div style={{ height: '20vh', background: '#FFFFFF' }}>
-			<div className="container" style={{ width: '30%', display: 'inline' }}>
-				<h1
-					style={{
-						color: '#1b1d1f',
-						display: 'inline',
-						marginLeft: '1em',
-						fontWeight: 'bold',
-					}}
-				>
-					<Link to="/sns" style={{ color: 'inherit' }}>
-						#OOTD
-					</Link>
-				</h1>
-				<h1
-					style={{
-						color: '#1b1d1f',
-						display: 'inline',
-						marginLeft: '1em',
-						fontWeight: 'bold',
-					}}
-				>
-					<Link to="/shoppingmall" style={{ color: 'inherit' }}>
-						#쇼핑몰
-					</Link>
-				</h1>
+		<div>
+
+			<div className="nav_container">
+				<div className="Menu">
+					<LandingPageNav />
+				</div>
+
+				<div className="Search">
+					<SearchBar />
+				</div>
+
+				<div className="allButtons">
+					<ButtonHandler />
+				</div>
 			</div>
 
-			{userData && !userData.isAuth && loginHandler()}
-			{userData && userData.isAuth && logoutHandler()}
+
+
+			<div>
+				<Button
+					className="menu__mobile-button"
+					type="primary"
+					onClick={showDrawer}
+				>
+					<AlignLeftOutlined type="align-right" />
+				</Button>
+				<Drawer
+					title="Basic Drawer"
+					placement="right"
+					className="menu_drawer"
+					closable={false}
+					onClose={onClose}
+					visible={visible}
+				>
+					<ButtonHandler />
+				</Drawer>
+			</div>
+
+
+
 		</div>
 	);
 }

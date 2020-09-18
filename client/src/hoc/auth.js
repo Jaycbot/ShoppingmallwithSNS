@@ -12,7 +12,6 @@ export default function (SpecificComponent, option, adminRoute = null) {
 		//페이지를 이동시 매번 auth를 채크한다.
 		useEffect(() => {
 			dispatch(auth()).then((response) => {
-				//분기처리
 				//로그인 하지 않은 상태
 				if (!response.payload.isAuth) {
 					if (option) {
@@ -20,7 +19,7 @@ export default function (SpecificComponent, option, adminRoute = null) {
 					}
 				} else {
 					//로그인 한 상태 -admin 페이지에 어드민 권한 없이 들어가려는 경우 막기
-					if (adminRoute && !response.payload.isAdmin) {
+					if (adminRoute && response.payload.role !== 1) {
 						props.history.push('/');
 					} else {
 						//로그인 유저가 들어가지 못하는 곳

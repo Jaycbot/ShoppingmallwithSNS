@@ -1,0 +1,35 @@
+.Store_navbar{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    p {
+        font-size: 20px;
+        color: #1b1d1f;
+		margin-left: 1em;
+		font-weight: bold;
+		display: flex;
+        justify-content: center;
+        font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
+    }
+}
+
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+
+.menu__mobile-button{
+    float: right;
+    height: 32px;
+    padding: 6px;
+    margin-top: 8px;
+    display: none !important; /* use of important to overwrite ant-btn */
+    background: #3e91f7;
+}
+
+@media (max-width: 842px) {
+	.Store_navbar{
+		display: none;
+    }
+    .menu__mobile-button{
+        display: inline-block !important;
+    }
+}

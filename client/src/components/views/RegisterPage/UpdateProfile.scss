@@ -1,0 +1,39 @@
+.update_container {
+	display: flex;
+	justify-content: center;
+
+	.left_navbar {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		margin-top: 2rem;
+		margin-left: 6rem;
+		margin-right: 10rem;
+		
+		.profile {
+			
+			width: intrinsic;           /* Safari/WebKit uses a non-standard name */
+			width: -moz-max-content;    /* Firefox/Gecko */
+			width: -webkit-max-content; /* Chrome */
+			width: max-content;
+
+			font-size: 16px;
+			font-weight: 700;
+			padding-right: 15px;
+			margin-bottom: 1rem;
+			display: block;
+		}
+		.change_password {
+			
+			width: intrinsic;           /* Safari/WebKit uses a non-standard name */
+			width: -moz-max-content;    /* Firefox/Gecko */
+			width: -webkit-max-content; /* Chrome */
+			width: max-content;
+
+			font-size: 16px;
+			font-weight: 700;
+			padding-right: 15px;
+			display: block;
+		}
+	}
+}

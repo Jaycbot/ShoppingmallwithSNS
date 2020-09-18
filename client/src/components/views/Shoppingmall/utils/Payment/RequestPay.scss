@@ -1,0 +1,43 @@
+.pay_button_parent {
+    margin: 24px 0 0 0;
+  }
+  
+  
+  .pay_get_cart_box {
+    width: 350px;
+    height: 15px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pay_get_cart_button {
+    -webkit-box-align: center;
+    align-items: center;
+    appearance: none;
+    border-radius: 9999px;
+    box-sizing: border-box;
+    cursor: pointer;
+    -webkit-box-pack: center;
+    justify-content: center;
+    outline: none;
+    position: relative;
+    text-decoration: none;
+    user-select: none;
+    height: 2.75rem;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 208, 177);
+    color: rgb(0, 193, 163);
+    padding: 0px 1.25rem;
+    display: inline-flex;
+    width: 100%;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: -0.025rem;
+    line-height: 1.31;
+    margin-top: -50px;
+    height: 47px;
+  }
+  .pay_get_cart_button:hover {
+    opacity: 0.8;
+  }

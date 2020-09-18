@@ -1,0 +1,30 @@
+.nav_container {
+	display: flex;
+	justify-content: space-between;
+	height: 8vh;
+	background: #ffffff;
+	align-items : center;
+	width: 100%;
+	// position: fixed;
+	// position: absolute;
+	position: relative;
+	
+}
+.menu__mobile-button{
+    float: right;
+    height: 32px;
+    padding: 6px;
+    margin-top: 8px;
+    display: none !important; /* use of important to overwrite ant-btn */
+    background: #3e91f7;
+}
+
+
+@media (max-width:  842px) {
+	.allButtons{
+		display: none;
+	}
+	.menu__mobile-button{
+        display: inline-block !important;
+    }
+}

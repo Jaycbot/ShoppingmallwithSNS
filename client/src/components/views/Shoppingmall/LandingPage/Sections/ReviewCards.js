@@ -1,0 +1,93 @@
+import React, { useState, useEffect } from 'react';
+import { Card, Avatar, Row, Col } from 'antd';
+import axios from 'axios';
+import RenderImages from '../../../SNS/utils/Sns_RenderImages';
+import RenderText from '../../../SNS/utils/RenderText';
+import './Cards.scss';
+import { RoutingVariable } from '../../../../Config';
+const { Meta } = Card;
+
+function ReviewCards() {
+	const [posts, setPosts] = useState([]);
+	let skip = 0;
+	const limit = 4;
+
+	useEffect(() => {
+		
+		getPosts();
+
+	}, []);
+
+	const getPosts = () => {
+		axios
+			.get(`/api/sns/reviewposts?skip=${skip} &limit=${limit}`)
+			.then((response) => {
+				if (response.data.success) {
+					if (response.data.posts) {
+						setPosts((prev) => [...prev].concat(response.data.posts));
+					}
+				}
+			})
+			.catch((e) => {
+				alert(e);
+			});
+	};
+
+	const renderProfileImage = (post) => {
+		if (post && post.writer.image) {
+			return `${RoutingVariable}${post.writer.image}`;
+		} else {
+			return 'https://thumbs.dreamstime.com/b/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg';
+		}
+	};
+
+	const renderPosts = (posts) =>
+		posts.map((post) => {
+			// (
+			if (post && post.writer) {
+				// 수정한 내용 원래는 없음
+				return (
+					<Col key={post._id} lg={6} md={8} xs={24}
+					style={{
+						display : 'flex',
+						justifyContent : 'center'
+					}}>
+						<Card
+							style={{
+								width: 250,
+								border: '2px solid #e8ebed',
+								borderRadius: '20px',
+							}}
+							cover={<RenderImages post={post} />}
+						>
+							<Meta
+								avatar={<Avatar src={renderProfileImage(post)} />}
+								description={<RenderText post={post} />}
+							/>
+						</Card>
+					</Col>
+				);
+			} // 수정한 내용
+		}); // ))
+	return (
+		<div>
+			<section className="hot_section" style={{ backgroundColor: 'white' }}>
+				<div className="hot_div_h2" style={{ marginTop: '3rem' }}>
+					<p className="hot_h2" style={{ color: 'black', fontWeight: 'bold' }}>
+						인기 구매후기
+					</p>
+				</div>
+				<br /> <br />
+				<div style={{ display: 'flex', justifyContent: 'center' }}>
+					<div width="0.5, 0.25">
+						<Row gutter={[16, 32]}>{renderPosts(posts)}</Row>
+					</div>
+				</div>
+				<br />
+				<br />
+			</section>
+		</div>
+	);
+}
+
+export default ReviewCards;

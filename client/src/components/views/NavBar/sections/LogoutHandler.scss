@@ -1,0 +1,17 @@
+.logoutButton_container {
+	float: right;
+	height: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-start;
+	button {
+		background-color: #1b1d1f;
+		color: #ffffff;
+		border-radius: 30px;
+		margin-top: 1em;
+		margin-right: 1em;
+		font-size: 18px;
+		padding: 2em auto;
+		border: none;
+	}
+}
