@@ -11,7 +11,6 @@ import { RoutingVariable } from '../../../Config';
 import { withRouter } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import LikeButton from './LikeButton'
 
 const customStyles = {
 	overlay: {

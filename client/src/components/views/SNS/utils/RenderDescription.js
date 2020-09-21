@@ -91,7 +91,7 @@ function RenderDescription(props) {
 				<div style={{ display: 'flex' }}>
 					<img
 						style={{ width: '35px', height: '35px', borderRadius: '16px' }}
-						src={renderProfileImage()}
+						src={comment.writer.image ? `${RoutingVariable}${comment.writer.image}` : 'https://thumbs.dreamstime.com/b/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg'}
 						alt="유저이미지"
 					/>
 					<h3>&nbsp;&nbsp;{comment.writer.name}</h3>
