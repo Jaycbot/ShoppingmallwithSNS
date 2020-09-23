@@ -12,8 +12,7 @@
 <hr/>
 
 ## 최종 배포
-  [StyleandShoppingmall](3.129.249.119, "link")
-
+  [sns](http://3.129.249.119)
 
 ## 사용기술
   * Frontend
