@@ -33,7 +33,7 @@
     "redux": "^4.0.5",
     "redux-promise": "^0.6.0",
     "redux-thunk": "^2.3.0",
-    "sanitize-html": "^1.27.2",
+    "sanitize-html": "^2.3.2",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.1.1",
     "sweetalert": "^2.1.2"
