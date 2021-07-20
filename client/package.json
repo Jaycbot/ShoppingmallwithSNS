@@ -21,7 +21,7 @@
     "react-image-gallery": "^1.0.7",
     "react-kakao-login": "^1.2.2",
     "react-modal": "^3.11.2",
-    "react-native": "^0.63.2",
+    "react-native": "^0.64.1",
     "react-native-webview": "^10.4.0",
     "react-navigation": "^4.4.0",
     "react-paypal-express-checkout": "^1.0.5",
